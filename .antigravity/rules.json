@@ -1,0 +1,19 @@
+{
+  "rules": [
+    {
+      "id": "strict-typing",
+      "description": "Enforce strict typing across Python (strict mypy/type hints) and TypeScript (strict mode enabled, no implicit any).",
+      "level": "error"
+    },
+    {
+      "id": "forbid-llm-apis",
+      "description": "Strictly forbid calling external or commercial LLM APIs (e.g., OpenAI, Anthropic, Gemini, external cloud LLM inference). All intelligence, matching, and vector embeddings must be performed offline or using open-source local models (e.g., sentence-transformers) and deterministic rule engines.",
+      "level": "error"
+    },
+    {
+      "id": "forbid-mainnet-blockchains",
+      "description": "Strictly forbid any integration, connection, or transaction submission to public mainnet blockchains or cryptocurrency networks. Any distributed ledger verification must use local testnets or mocked cryptographic ledgers.",
+      "level": "error"
+    }
+  ]
+}

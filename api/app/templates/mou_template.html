@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memorandum of Understanding - Innovation Pilot</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 20mm 20mm 20mm;
+      @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+      @bottom-left {
+        content: "SETU Innovation Sandbox | GFR 2017 Rule 173";
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page {
+      position: relative;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .emblem-box {
+      width: 60px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .emblem-symbol {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #003366;
+      border-radius: 50%;
+      line-height: 44px;
+      font-weight: bold;
+      font-size: 16pt;
+      color: #003366;
+      text-align: center;
+    }
+
+    .header-text {
+      vertical-align: middle;
+      padding-left: 12px;
+    }
+
+    .header-title {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #003366;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+
+    .header-subtitle {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin: 2px 0 0 0;
+    }
+
+    .doc-meta {
+      width: 100%;
+      margin: 10px 0 14px 0;
+      border: 1px solid #cbd5e1;
+      background-color: #f8fafc;
+      border-radius: 4px;
+    }
+
+    .doc-meta td {
+      padding: 6px 10px;
+      font-size: 8.5pt;
+    }
+
+    .doc-meta td strong {
+      color: #0f172a;
+    }
+
+    .doc-heading {
+      text-align: center;
+      font-size: 12pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: underline;
+      margin: 12px 0 10px 0;
+      color: #003366;
+    }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: bold;
+      color: #003366;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    p, li {
+      margin: 4px 0;
+      text-align: justify;
+    }
+
+    ol {
+      margin: 4px 0;
+      padding-left: 20px;
+    }
+
+    /* Milestone Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 8.5pt;
+    }
+
+    .data-table th {
+      background-color: #003366;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #003366;
+    }
+
+    .data-table td {
+      padding: 5px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    .signatures-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      border: 1px solid #cbd5e1;
+      background-color: #ffffff;
+    }
+
+    .signatures-table td {
+      width: 50%;
+      padding: 12px 16px;
+      vertical-align: top;
+      border: 1px solid #cbd5e1;
+    }
+
+    .sig-line {
+      margin-top: 40px;
+      border-top: 1px dashed #64748b;
+      padding-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page">
+    <table class="header-table">
+      <tr>
+        <td class="emblem-box">
+          <div class="emblem-symbol">MH</div>
+        </td>
+        <td class="header-text">
+          <div class="header-title">Government of Maharashtra</div>
+          <div class="header-subtitle">{{ department_name | default("Department of Information Technology & Innovation") }}</div>
+        </td>
+      </tr>
+    </table>
+
+    <table class="doc-meta">
+      <tr>
+        <td><strong>Pilot Ref ID:</strong> {{ pilot_id | default("MH-SETU-2026-PILOT-042") }}</td>
+        <td><strong>Date of Execution:</strong> {{ execution_date | default("05 September 2026") }}</td>
+      </tr>
+      <tr>
+        <td><strong>Challenge Title:</strong> {{ challenge_title | default("Real-time AI Pothole Detection & Road Quality Assessment") }}</td>
+        <td><strong>Budget / Escrow Total:</strong> INR {{ budget_amount | default("25,00,000/-") }}</td>
+      </tr>
+    </table>
+
+    <div class="doc-heading">Memorandum of Understanding (MoU)</div>
+    <p style="text-align:center; font-size: 8.5pt; color: #475569; margin-top: -6px;">
+      Executed under <strong>General Financial Rules (GFR) 2017 Rule 173</strong> & Maharashtra State Innovative Startup Policy
+    </p>
+
+    <div class="section-title">1. Parties & Recitals</div>
+    <p>
+      This Memorandum of Understanding (the "MoU") is entered into by and between the <strong>{{ department_name | default("Department of IT & Innovation, Govt. of Maharashtra") }}</strong>, acting through its designated Nodal Officer (hereinafter referred to as the <strong>"Procuring Entity"</strong>), and <strong>{{ startup_name | default("InnovateTech Solutions Pvt. Ltd.") }}</strong>, an entity incorporated under the Companies Act and certified by DPIIT (hereinafter referred to as the <strong>"Startup"</strong>).
+    </p>
+    <p>
+      <strong>WHEREAS:</strong>
+    </p>
+    <ol type="a">
+      <li>The Procuring Entity has published an innovation procurement challenge on the <strong>SETU OS</strong> platform under statutory relaxation provided under <strong>GFR 2017 Rule 173</strong> for rapid pilot deployment of validated high-TRL innovations.</li>
+      <li>The Startup has been rigorously evaluated via Explainable AI matching with verified technical readiness, GFR 173 compliance, and validated feasibility.</li>
+      <li>Both Parties desire to enter into this Sandbox Pilot agreement to validate the solution in a live government testing environment under structured milestone disbursals.</li>
+    </ol>
+
+    <div class="section-title">2. Scope of Pilot & Technical Deliverables</div>
+    <p>
+      The Startup shall deploy its proprietary solution: <strong>{{ solution_summary | default("Computer vision edge cameras mounted on municipal transit vehicles for automated road surface roughness and distress logging.") }}</strong> for a test period of <strong>{{ pilot_duration | default("90 days") }}</strong> across designated operational zones.
+    </p>
+
+    <div class="section-title">3. Milestone Schedule & Escrow Disbursements</div>
+    <p>
+      Disbursements shall be released from the earmarked government escrow account strictly upon transparent verification of evidence submitted through the SETU immutable audit chain:
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 8%;">#</th>
+          <th style="width: 32%;">Milestone Scope</th>
+          <th style="width: 25%;">Disbursement</th>
+          <th style="width: 35%;">Evidence Criteria</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if milestones and milestones|length > 0 %}
+          {% for m in milestones %}
+          <tr>
+            <td style="text-align:center; font-weight:bold;">M{{ m.index | default(loop.index) }}</td>
+            <td>{{ m.scope | default("Deployment of core hardware and edge telemetry") }}</td>
+            <td>INR {{ m.amount | default("5,00,000/-") }}</td>
+            <td>{{ m.evidence | default("Hardware installation certificate & initial telemetry log") }}</td>
+          </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td style="text-align:center; font-weight:bold;">M1</td>
+            <td>Sandbox Deployment & Telemetry Integration</td>
+            <td>INR 5,00,000/- (20%)</td>
+            <td>Deployment test logs & API handshake receipt</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">M2</td>
+            <td>Live Pilot Execution & Field Testing</td>
+            <td>INR 12,50,000/- (50%)</td>
+            <td>Real-time dashboard validation & field audit logs</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">M3</td>
+            <td>Final Evaluation & Scale-Up Report</td>
+            <td>INR 7,50,000/- (30%)</td>
+            <td>Third-party validation report & WeasyPrint signoff</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page page-break">
+    <div class="section-title">4. Data Localization & Cybersecurity Governance</div>
+    <p>
+      In accordance with the National Data Governance Framework and the Digital Personal Data Protection Act:
+    </p>
+    <ol>
+      <li><strong>Sovereign Data Residency:</strong> All government data, sensor telemetry, GIS coordinates, and user records generated during the pilot must reside strictly on Indian data center infrastructure. Zero data shall be egressed overseas.</li>
+      <li><strong>Information Security:</strong> The Startup shall maintain AES-256 encryption at rest and TLS 1.3 encryption in transit for all APIs and communication channels.</li>
+      <li><strong>Auditability:</strong> All configuration modifications, state transitions, and milestone submissions shall be logged immutably via SETU cryptographic audit chains.</li>
+    </ol>
+
+    <div class="section-title">5. Intellectual Property Rights (IPR)</div>
+    <ol>
+      <li><strong>Background IP:</strong> The Startup shall retain full, exclusive ownership of all pre-existing Intellectual Property, proprietary algorithms, and models.</li>
+      <li><strong>Government License:</strong> The Procuring Entity receives a perpetual, non-exclusive, royalty-free license to use data and analytics dashboards generated during the pilot for municipal operations.</li>
+      <li><strong>Scale-Up Option:</strong> Upon successful completion of M3 with ScaleUpRecommended status, the Procuring Entity retains the right to procure enterprise rollout under GFR 173 without repeat tender.</li>
+    </ol>
+
+    <div class="section-title">6. Default, Termination & Dispute Resolution</div>
+    <p>
+      Either party may terminate this MoU with 14 days' written notice in the event of material non-performance. Any disputes arising hereunder shall be referred to the Secretary (IT), Government of Maharashtra, whose decision shall be final and binding.
+    </p>
+
+    <!-- Signatures -->
+    <table class="signatures-table">
+      <tr>
+        <td>
+          <div style="font-weight:bold; color: #003366; font-size: 9pt;">FOR THE PROCURING ENTITY</div>
+          <div style="font-size: 8pt; color: #475569; margin-top: 2px;">Government of Maharashtra</div>
+          <div class="sig-line">
+            <strong>Signature:</strong> ____________________________<br>
+            <strong>Name:</strong> {{ nodal_officer_name | default("Shri Rajesh Patil, IAS") }}<br>
+            <strong>Designation:</strong> {{ nodal_officer_title | default("Director of Innovation & Nodal Officer") }}<br>
+            <strong>Seal:</strong> [ Department Stamp ]
+          </div>
+        </td>
+        <td>
+          <div style="font-weight:bold; color: #003366; font-size: 9pt;">FOR THE STARTUP</div>
+          <div style="font-size: 8pt; color: #475569; margin-top: 2px;">DPIIT Recognized Entity</div>
+          <div class="sig-line">
+            <strong>Signature:</strong> ____________________________<br>
+            <strong>Name:</strong> {{ signatory_name | default("Ms. Ananya Sharma") }}<br>
+            <strong>Designation:</strong> {{ signatory_title | default("Founder & Chief Executive Officer") }}<br>
+            <strong>Entity:</strong> {{ startup_name | default("InnovateTech Solutions Pvt. Ltd.") }}
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
