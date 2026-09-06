@@ -516,6 +516,98 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 .login-hdr p{font-size: 12px;color: #bfdbfe;margin-top: 4px;}
 .login-body{padding: 26px;}
 
+/* UIVERSE LOGIN CARD (by micaelgomestavares) */
+.login-form-uiverse {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 34px 30px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+.login-form-uiverse .flex-column > label {
+  color: #151717;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.login-form-uiverse .inputForm {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  transition: 0.2s ease-in-out;
+  background: #fff;
+}
+.login-form-uiverse .input {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 88%;
+  height: 100%;
+  font-size: 13.5px;
+  color: #151717;
+  background: transparent;
+}
+.login-form-uiverse .input:focus {
+  outline: none;
+}
+.login-form-uiverse .inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
+  box-shadow: 0 0 0 3px rgba(45, 121, 243, 0.12);
+}
+.login-form-uiverse .flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+.login-form-uiverse .flex-row > div > label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 400;
+  cursor: pointer;
+}
+.login-form-uiverse .span {
+  font-size: 13px;
+  color: #2d79f3;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+.login-form-uiverse .span:hover {
+  text-decoration: underline;
+}
+.login-form-uiverse .button-submit {
+  margin: 14px 0 6px 0;
+  background-color: #0b2545;
+  border: none;
+  color: white;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 10px;
+  height: 48px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.login-form-uiverse .button-submit:hover {
+  background-color: #1d4ed8;
+}
+.login-form-uiverse .p {
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+  margin: 8px 0 0 0;
+}
+
 /* FOOTER */
 .gov-footer{background: #0b2545;color: #bfdbfe;padding: 20px;text-align: center;font-size: 11.5px;margin-top: auto;border-top: 1px solid rgba(255,255,255,.08);}
 
@@ -855,27 +947,43 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 <!-- 2. LOGIN PAGE -->
 <div class="page" id="page-login">
   <div class="login-wrap">
-    <div class="login-box">
-      <div class="login-hdr">
-        <h2 id="login-title">Govt Officer / Buyer Login</h2>
-        <p>Government of India &bull; GFR 2017 Rule 173 Portal</p>
+    <form class="login-form-uiverse" onsubmit="event.preventDefault(); doLogin();">
+      <div style="margin-bottom: 12px; text-align: center;">
+        <h2 id="login-title" style="font-size: 20px; font-weight: 700; color: #0b2545; letter-spacing: -0.3px;">Govt Officer / Buyer Login</h2>
       </div>
-      <div class="login-body">
-        <div id="login-error"></div>
-        <div class="form-group">
-          <label class="form-label">Email or Username</label>
-          <input class="form-control" id="login-email" placeholder="e.g. buyer or buyer@pune.gov.in">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input class="form-control" type="password" id="login-password" placeholder="Enter your password">
-        </div>
-        <button class="btn btn-primary" onclick="doLogin()" style="width:100%;margin-top:8px;">Sign In to Portal</button>
-        <div style="text-align:center;margin-top:14px;font-size:12px;color:var(--muted);">
-          <a href="#" onclick="showPage('page-landing')">&#8592; Back to Home</a>
-        </div>
+
+      <div id="login-error"></div>
+
+      <div class="flex-column">
+        <label>Email or Username</label>
       </div>
-    </div>
+      <div class="inputForm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <input class="input" id="login-email" placeholder="e.g. buyer or buyer@pune.gov.in" autocomplete="username">
+      </div>
+
+      <div class="flex-column" style="margin-top: 4px;">
+        <label>Password</label>
+      </div>
+      <div class="inputForm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <input class="input" type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password">
+      </div>
+
+      <div class="flex-row">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <input type="checkbox" id="remember-me" style="cursor: pointer;">
+          <label for="remember-me">Remember me</label>
+        </div>
+        <span class="span" onclick="toast('Please contact your nodal officer for credential reset.', 'info')">Forgot password?</span>
+      </div>
+
+      <button type="submit" class="button-submit">Sign In to Portal</button>
+
+      <p class="p">
+        <a href="#" onclick="showPage('page-landing')" class="span" style="color: #64748b;">&#8592; Back to Home</a>
+      </p>
+    </form>
   </div>
 </div>
 
