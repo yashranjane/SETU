@@ -1021,7 +1021,6 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 
 <!-- 7. SELLER DASHBOARD & ACTIVE PILOTS -->
 <div class="page" id="page-seller-home">
-  <div class="sec-title" id="seller-welcome">Seller Innovation Sandbox Dashboard</div>
   <div class="stats-grid" id="seller-stats"></div>
 
   <!-- DISCOVERY BANNER -->
@@ -2025,7 +2024,6 @@ function useDemoVideo(milestoneId) {
 
 async function loadSellerHome() {
   showPage('page-seller-home');
-  document.getElementById('seller-welcome').textContent = `Innovation Sandbox &mdash; ${S.user.full_name} (${S.user.org_name})`;
   try {
     const pilots = await api('GET', '/pilots/mine');
     const container = document.getElementById('seller-pilots-list');
