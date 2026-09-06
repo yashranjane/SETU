@@ -871,6 +871,14 @@ textarea.form-control{resize: vertical;min-height: 85px;}
           <input class="form-control" type="password" id="login-password" placeholder="Enter your password">
         </div>
         <button class="btn btn-primary" onclick="doLogin()" style="width:100%;margin-top:8px;">Sign In to Portal</button>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+          <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px;text-align:center;letter-spacing:0.5px;">⚡ 1-Click Live Multi-User Demo</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <button type="button" class="btn btn-outline btn-sm" onclick="quickLogin('buyer@pune.gov.in','Buyer@123!')" style="justify-content:center;font-size:11.5px;">🏢 Buyer (Pune)</button>
+            <button type="button" class="btn btn-outline btn-sm" onclick="quickLogin('seller@rajputana.in','Seller@123!')" style="justify-content:center;font-size:11.5px;">🚀 Seller (Startup)</button>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="quickLogin('admin@setu.gov.in','Admin@123!')" style="width:100%;margin-top:6px;justify-content:center;font-size:11.5px;">🛡️ SETU Administrator</button>
+        </div>
         <div style="text-align:center;margin-top:14px;font-size:12px;color:var(--muted);">
           <a href="#" onclick="showPage('page-landing')">&#8592; Back to Home</a>
         </div>
@@ -1216,12 +1224,16 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 // STATE
 // ============================================================
 let S = {
-  token: localStorage.getItem('setu_token'),
+  token: sessionStorage.getItem('setu_token') || localStorage.getItem('setu_token'),
   user: null,
   currentChallengeId: null,
   currentPilotId: null,
 };
-try { S.user = JSON.parse(localStorage.getItem('setu_user') || 'null'); } catch(e) { S.user = null; }
+try { 
+  S.user = JSON.parse(sessionStorage.getItem('setu_user') || localStorage.getItem('setu_user') || 'null'); 
+} catch(e) { 
+  S.user = null; 
+}
 
 function fmt(n) {
   if (n == null) return '0.00';
@@ -1350,6 +1362,14 @@ function showLoginPage(role) {
   showPage('page-login');
 }
 
+function quickLogin(email, pass) {
+  const emailInput = document.getElementById('login-email');
+  const passInput = document.getElementById('login-password');
+  if (emailInput) emailInput.value = email;
+  if (passInput) passInput.value = pass;
+  doLogin();
+}
+
 async function doLogin() {
   const email = document.getElementById('login-email').value.trim();
   const pass = document.getElementById('login-password').value;
@@ -1361,6 +1381,9 @@ async function doLogin() {
     const data = await api('POST', '/auth/login', {email, password:pass});
     S.token = data.access_token;
     S.user = {id:data.user_id, email:data.email, full_name:data.full_name, role:data.role, org_name:data.org_name};
+    // Isolated per-tab session storage prevents session collision between Buyer and Seller tabs
+    sessionStorage.setItem('setu_token', S.token);
+    sessionStorage.setItem('setu_user', JSON.stringify(S.user));
     localStorage.setItem('setu_token', S.token);
     localStorage.setItem('setu_user', JSON.stringify(S.user));
     updateHeaderAndNav();
@@ -1373,6 +1396,7 @@ async function doLogin() {
 
 function logout() {
   S.token = null; S.user = null;
+  sessionStorage.removeItem('setu_token'); sessionStorage.removeItem('setu_user');
   localStorage.removeItem('setu_token'); localStorage.removeItem('setu_user');
   updateHeaderAndNav();
   showPage('page-landing');

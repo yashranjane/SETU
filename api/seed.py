@@ -3,17 +3,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-db_file = os.path.join(os.path.dirname(__file__), "setu.db")
-if os.path.exists(db_file):
-    try:
-        os.remove(db_file)
-        print(f"  Removed old database: {db_file}")
-    except PermissionError:
-        print("  Database locked by active server, dropping all tables via engine...")
-
 import app.models  # noqa: F401
 from app.db import engine
-from sqlmodel import SQLModel, Session
+from sqlmodel import SQLModel, Session, select
 from app.models.user import User
 from app.models.startup import Startup
 from app.models.challenge import Challenge
@@ -22,9 +14,16 @@ from app.models.milestone import Milestone
 from app.core.auth import hash_password
 from app.services.audit_service import append_audit_block
 
-SQLModel.metadata.drop_all(engine)
+# Ensure tables exist without dropping existing data
 SQLModel.metadata.create_all(engine)
-print("  Fresh database tables created.")
+
+with Session(engine) as session:
+    existing_user = session.exec(select(User)).first()
+    if existing_user:
+        print("  Database already contains data. Preserving all records.")
+        sys.exit(0)
+
+    print("  Seeding initial demo data for first-time launch...")
 
 with Session(engine) as session:
     # 1. Admin
