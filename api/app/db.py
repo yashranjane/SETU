@@ -5,8 +5,10 @@ from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 db_url = settings.DB_URL
-connect_args = {}
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
 
+connect_args = {}
 if db_url.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
 
