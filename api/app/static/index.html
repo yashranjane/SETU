@@ -881,32 +881,6 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 
 <!-- 3. BUYER DASHBOARD -->
 <div class="page" id="page-buyer-home">
-  <div class="sec-title" id="buyer-welcome">Govt Buyer Trial Dashboard</div>
-
-  <!-- GFR 2017 RULE 173 STATUTORY LIFECYCLE STEPPER -->
-  <div class="gfr-stepper">
-    <div class="gfr-step active current">
-      <div class="gfr-num">1</div>
-      <div class="gfr-label"><strong>1. State Need</strong><span>Civic Outcome Challenge</span></div>
-    </div>
-    <div class="gfr-step active">
-      <div class="gfr-num">2</div>
-      <div class="gfr-label"><strong>2. AI Matching</strong><span>Explainable 4-Factor Engine</span></div>
-    </div>
-    <div class="gfr-step">
-      <div class="gfr-num">3</div>
-      <div class="gfr-label"><strong>3. Sandbox MoU</strong><span>Statutory GFR Rule 173</span></div>
-    </div>
-    <div class="gfr-step">
-      <div class="gfr-num">4</div>
-      <div class="gfr-label"><strong>4. Milestone Escrow</strong><span>Safe 20% / 50% / 30% Tranches</span></div>
-    </div>
-    <div class="gfr-step">
-      <div class="gfr-num">5</div>
-      <div class="gfr-label"><strong>5. GeM Direct Purchase</strong><span>Fast-Track Scale-Up Dossier</span></div>
-    </div>
-  </div>
-
   <div class="stats-grid" id="buyer-stats"></div>
   <!-- INCOMING STARTUP PROPOSALS & REVERSE AI RELEVANCE -->
   <div class="card" id="buyer-pitches-card">
@@ -1411,7 +1385,6 @@ function logout() {
 // ============================================================
 async function loadBuyerHome() {
   showPage('page-buyer-home');
-  document.getElementById('buyer-welcome').textContent = `Public Buyer Sandbox &mdash; ${S.user.full_name} (${S.user.org_name})`;
   try {
     const challenges = await api('GET', '/challenges/mine');
     const pilots = await api('GET', '/pilots/mine');
