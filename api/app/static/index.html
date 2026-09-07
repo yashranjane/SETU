@@ -6,28 +6,35 @@
 <title>SETU &mdash; GFR 2017 Rule 173 Innovation Sandbox Portal | Government of India</title>
 <style>
 :root{
-  --navy: #0b2545;
-  --navy-light: #133b68;
-  --blue: #1d4ed8;
-  --blue-subtle: #eff6ff;
-  --saffron: #ea580c;
-  --saffron-light: #fff7ed;
-  --green: #15803d;
-  --green-subtle: #f0fdf4;
-  --purple: #7e22ce;
-  --purple-subtle: #faf5ff;
-  --slate-bg: #f8fafc;
+  --saffron: #D95A1E;
+  --saffron-deep: #C2410C;
+  --saffron-dark: #9A3412;
+  --saffron-light: #FFF8F3;
+  --saffron-subtle: #FAF2EB;
+  --green: #15803D;
+  --green-light: #16A34A;
+  --green-subtle: #F0FDF4;
+  --navy: #0F172A;
+  --navy-dark: #020617;
+  --navy-light: #1E293B;
+  --blue: #1D4ED8;
+  --blue-light: #3B82F6;
+  --blue-subtle: #EFF6FF;
+  --chakra-blue: #0A369D;
+  --purple: #6366F1;
+  --purple-subtle: #EEF2FF;
+  --slate-bg: #F8FAFC;
   --card-bg: #ffffff;
-  --border: #e2e8f0;
-  --border-subtle: #f1f5f9;
-  --text: #0f172a;
-  --muted: #64748b;
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --text: #0F172A;
+  --muted: #64748B;
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px -2px rgba(15,39,68,0.08);
+  --shadow-lg: 0 10px 24px -4px rgba(15,39,68,0.12);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{
@@ -41,13 +48,13 @@ body{
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-a{color:var(--blue);text-decoration:none;transition:color .15s;}
-a:hover{color:#1e40af;text-decoration:underline;}
+a{color: #1D4ED8;text-decoration:none;transition:color .15s;}
+a:hover{color: #C2410C;text-decoration:underline;}
 
 /* TOP NATIONAL STRIP */
 .top-strip{
-  background: #0f172a;
-  color: #94a3b8;
+  background: #0F172A;
+  color: #94A3B8;
   font-size: 11px;
   padding: 6px 20px;
   display: flex;
@@ -55,67 +62,83 @@ a:hover{color:#1e40af;text-decoration:underline;}
   align-items: center;
   letter-spacing: .3px;
 }
-.top-strip strong{color:#f8fafc;font-weight:600;}
+.top-strip strong{color:#ffffff;font-weight:600;}
 
-/* MAIN HEADER */
+/* MAIN HEADER — REFINED DIGNIFIED INDIAN KESARI */
 .gov-header{
-  background: linear-gradient(135deg, #071c36 0%, #0b2545 100%);
-  color: #fff;
-  padding: 12px 20px;
+  background: linear-gradient(115deg, #9A3412 0%, #B84718 45%, #D4541B 100%);
+  color: #ffffff;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  box-shadow: 0 4px 14px rgba(154,52,18,.22);
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid #7C2D12;
+}
+.gov-header::after{
+  content: "";
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  width: 320px;
+  height: 56px;
+  background: url('/static/monuments_white_hd.png') no-repeat right bottom;
+  background-size: contain;
+  opacity: 0.14;
+  pointer-events: none;
 }
 .gov-emblem{
-  width: 52px;
-  height: 52px;
-  background: #fff;
+  width: 54px;
+  height: 54px;
+  background: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
   flex-shrink: 0;
-  border: 2px solid #FF9933;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  border: 2px solid #FED7AA;
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  padding: 4px;
 }
-.gov-name-en{font-size: 18px;font-weight: 700;letter-spacing: .3px;}
-.gov-name-hi{font-size: 12px;color: #bfdbfe;margin-top: 2px;font-weight: 500;}
-.gov-tagline{font-size: 11.5px;color: #93c5fd;margin-top: 2px;}
-.gov-header-right{margin-left: auto;text-align: right;font-size: 12px;color: #bfdbfe;}
+.gov-name-en{font-size: 19px;font-weight: 800;letter-spacing: .3px;color: #ffffff;text-shadow: 0 1px 2px rgba(0,0,0,0.18);}
+.gov-name-hi{font-size: 12.5px;color: #FFF7ED;margin-top: 2px;font-weight: 600;}
+.gov-tagline{font-size: 11.5px;color: #FED7AA;margin-top: 2px;}
+.gov-header-right{margin-left: auto;text-align: right;font-size: 12px;color: #FFF7ED;}
 
 /* TRICOLOR BAND */
-.tricolor{height: 4px;background: linear-gradient(90deg,#FF9933 33.33%,#fff 33.33% 66.66%,#138808 66.66%);}
+.tricolor{height: 4px;background: linear-gradient(90deg,#D95A1E 33.33%,#ffffff 33.33% 66.66%,#138808 66.66%);}
 
-/* NAVIGATION */
+/* NAVIGATION — DEEP KESARI / SAFFRON WITH CRISP WHITE & GOLD HIGHLIGHTS */
 .gov-nav{
-  background: #0f2d59;
+  background: linear-gradient(90deg, #7C2D12 0%, #9A3412 50%, #7C2D12 100%);
   display: flex;
   align-items: stretch;
   padding: 0 16px;
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 3px solid #B84718;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .nav-btn{
-  color: #e2e8f0;
+  color: #FFFFFF;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 11px 16px;
   cursor: pointer;
   background: none;
   border: none;
   border-bottom: 3px solid transparent;
   white-space: nowrap;
-  transition: all .2s ease;
+  transition: all .15s ease;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
-.nav-btn:hover{background: rgba(255,255,255,.1);color: #fff;border-bottom-color: #FF9933;}
-.nav-btn.active{background: rgba(255,255,255,.14);color: #fff;border-bottom-color: #FF9933;font-weight: 600;}
+.nav-btn:hover{background: rgba(255,255,255,.16);color: #fff;border-bottom-color: #FED7AA;}
+.nav-btn.active{background: rgba(255,255,255,.26);color: #fff;border-bottom-color: #FFFFFF;font-weight: 700;}
 .nav-spacer{flex: 1;}
-.nav-user-info{color: #bfdbfe;font-size: 12px;padding: 10px 16px;display: flex;align-items: center;gap: 8px;}
+.nav-user-info{color: #FED7AA;font-size: 12px;padding: 10px 16px;display: flex;align-items: center;gap: 8px;}
 
 /* MAIN CONTAINER */
 .main{flex: 1;padding: 24px 20px;max-width: 1180px;margin: 0 auto;width: 100%;}
@@ -146,13 +169,13 @@ a:hover{color:#1e40af;text-decoration:underline;}
 }
 .gfr-step:last-child{border-right: none;}
 .gfr-step.active{background: #f8fafc;}
-.gfr-step.current{background: #eff6ff;}
+.gfr-step.current{background: #FFF7ED;}
 .gfr-step.current::after{
   content: '';
   position: absolute;
   bottom: 0;left: 0;right: 0;
   height: 3px;
-  background: var(--blue);
+  background: #D95A1E;
 }
 .gfr-num{
   width: 26px;
@@ -167,10 +190,10 @@ a:hover{color:#1e40af;text-decoration:underline;}
   justify-content: center;
   flex-shrink: 0;
 }
-.gfr-step.active .gfr-num{background: #0b2545;color: #fff;}
-.gfr-step.current .gfr-num{background: var(--blue);color: #fff;box-shadow: 0 0 0 3px rgba(29,78,216,.2);}
+.gfr-step.active .gfr-num{background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);color: #fff;}
+.gfr-step.current .gfr-num{background: linear-gradient(135deg, #D4541B 0%, #B84718 100%);color: #fff;box-shadow: 0 0 0 3px rgba(184,71,24,.22);}
 .gfr-label{display: flex;flex-direction: column;}
-.gfr-label strong{font-size: 12px;color: var(--navy);font-weight: 600;line-height: 1.2;}
+.gfr-label strong{font-size: 12px;color: #0F172A;font-weight: 700;line-height: 1.2;}
 .gfr-label span{font-size: 10.5px;color: var(--muted);line-height: 1.2;margin-top: 1px;}
 
 /* CARDS */
@@ -185,28 +208,30 @@ a:hover{color:#1e40af;text-decoration:underline;}
 }
 .card:hover{box-shadow: var(--shadow-md);}
 .card-header{
-  background: linear-gradient(135deg, #0b2545 0%, #163e6e 100%);
+  background: linear-gradient(135deg, #B84718 0%, #9A3412 100%);
   color: #fff;
   padding: 13px 18px;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #D97706;
 }
 .card-body{padding: 20px;}
 
 /* TABLES */
 .data-table{width: 100%;border-collapse: separate;border-spacing: 0;font-size: 13px;}
 .data-table th{
-  background: #0b2545;
+  background: linear-gradient(135deg, #B84718 0%, #9A3412 100%);
   color: #fff;
   padding: 11px 16px;
   text-align: left;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: .3px;
+  border-bottom: 2px solid #D97706;
 }
 .data-table td{
   padding: 12px 16px;
@@ -239,14 +264,14 @@ a:hover{color:#1e40af;text-decoration:underline;}
   transition: border-color .15s, box-shadow .15s;
 }
 .form-control:focus{
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(29,78,216,.15);
+  border-color: #C2410C;
+  box-shadow: 0 0 0 3px rgba(194,65,12,.18);
 }
 select.form-control{cursor: pointer;}
 textarea.form-control{resize: vertical;min-height: 85px;}
 .form-row{display: grid;grid-template-columns: 1fr 1fr;gap: 16px;}
 
-/* BUTTONS */
+/* BUTTONS — SUBTLE GRADIENTS & ACCENTS */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -261,21 +286,75 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   white-space: nowrap;
   box-shadow: 0 1px 2px rgba(0,0,0,.06);
 }
-.btn:hover{transform: translateY(-1px);box-shadow: 0 3px 6px rgba(0,0,0,.1);}
+.btn:hover{transform: translateY(-1px);box-shadow: 0 3px 8px rgba(0,0,0,.12);}
 .btn:active{transform: translateY(0);}
 .btn:disabled{opacity: .5;cursor: not-allowed;transform: none;box-shadow: none;}
-.btn-primary{background: #1d4ed8;color: #fff;}
-.btn-primary:hover{background: #1e40af;}
-.btn-success{background: #15803d;color: #fff;}
-.btn-success:hover{background: #166534;}
-.btn-danger{background: #b91c1c;color: #fff;}
-.btn-warning{background: #ea580c;color: #fff;}
-.btn-warning:hover{background: #c2410c;}
+.btn-primary{background: linear-gradient(135deg, #D4541B 0%, #B84718 100%);color: #fff;border: 1px solid #9A3412;font-weight: 700;box-shadow: 0 2px 6px rgba(184, 71, 24, .25);}
+.btn-primary:hover{background: linear-gradient(135deg, #C2410C 0%, #9A3412 100%);color: #fff;box-shadow: 0 4px 12px rgba(184, 71, 24, .32);}
+.btn-success{background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);color: #fff;border: 1px solid #14532D;box-shadow: 0 2px 6px rgba(22, 163, 74, .22);}
+.btn-success:hover{background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);box-shadow: 0 4px 12px rgba(22, 163, 74, .32);}
+.btn-danger{background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);color: #fff;}
+.btn-warning{background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);color: #fff;}
+.btn-warning:hover{background: linear-gradient(135deg, #D97706 0%, #B45309 100%);}
 .btn-secondary{background: #475569;color: #fff;}
-.btn-outline{background: #fff;color: var(--navy);border: 1px solid var(--border);}
-.btn-outline:hover{background: #f8fafc;border-color: #cbd5e1;}
-.btn-sm{padding: 6px 12px;font-size: 12px;border-radius: 5px;}
-.btn-xs{padding: 4px 10px;font-size: 11px;border-radius: 4px;}
+.btn-outline{background: #fff;color: #C2410C;border: 1.5px solid #FED7AA;}
+.btn-outline:hover{background: #FFF8F3;border-color: #C2410C;color: #9A3412;}
+.btn-sm{padding: 6px 16px;font-size: 12px;border-radius: 999px;}
+.btn-xs{padding: 4px 12px;font-size: 11px;border-radius: 999px;}
+
+/* PILL OUTLINE BUTTON */
+.btn-pill{
+  display: inline-flex;align-items: center;gap: 6px;
+  padding: 8px 22px;
+  border: 1.5px solid #FED7AA;
+  border-radius: 999px;
+  color: #C2410C;
+  font-size: 13px;
+  font-weight: 700;
+  background: #fff;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.btn-pill:hover{background: linear-gradient(135deg, #D4541B 0%, #B84718 100%);color: #fff;border-color: #9A3412;}
+
+/* STEP FLOW (startupindia style icon grid) */
+.step-flow{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.step-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 130px;
+  position: relative;
+}
+.step-icon-wrap{
+  width: 64px;height: 64px;
+  border-radius: 50%;
+  display: flex;align-items: center;justify-content: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  flex-shrink: 0;
+}
+.step-label{font-size: 12px;font-weight: 700;color: #333;line-height: 1.3;}
+.step-arrow{
+  display: flex;
+  align-items: center;
+  padding-bottom: 36px;
+  color: #C2410C;
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  padding-left: 2px;padding-right: 2px;
+}
 
 /* BADGES & CHIPS */
 .badge{
@@ -288,13 +367,13 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   text-transform: uppercase;
   letter-spacing: .4px;
 }
-.badge-open{background: #dcfce7;color: #15803d;border: 1px solid #bbf7d0;}
-.badge-matched{background: #dbeafe;color: #1d4ed8;border: 1px solid #bfdbfe;}
-.badge-pilotactive{background: #ffedd5;color: #c2410c;border: 1px solid #fed7aa;}
-.badge-scaleuprecommended{background: #f3e8ff;color: #7e22ce;border: 1px solid #e9d5ff;}
-.badge-approved{background: #dcfce7;color: #15803d;border: 1px solid #bbf7d0;}
-.badge-pending{background: #fef9c3;color: #a16207;border: 1px solid #fef08a;}
-.badge-proofsubmitted{background: #e0f2fe;color: #0369a1;border: 1px solid #bae6fd;}
+.badge-open{background: #EAF6EA;color: #138808;border: 1px solid #A8D9A8;}
+.badge-matched{background: #FFF8F3;color: #C2410C;border: 1px solid #FED7AA;}
+.badge-pilotactive{background: #FFF8F3;color: #C2410C;border: 1px solid #FED7AA;}
+.badge-scaleuprecommended{background: #FFF8F3;color: #C2410C;border: 1px solid #FED7AA;}
+.badge-approved{background: #EAF6EA;color: #138808;border: 1px solid #A8D9A8;}
+.badge-pending{background: #FFFBE6;color: #996600;border: 1px solid #FFE080;}
+.badge-proofsubmitted{background: #FFF8F3;color: #C2410C;border: 1px solid #FED7AA;}
 
 .chip{
   display: inline-block;
@@ -308,22 +387,31 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   margin-right: 5px;
   margin-bottom: 5px;
 }
-.chip-green{background: #dcfce7;color: #15803d;border-color: #bbf7d0;}
-.chip-purple{background: #f3e8ff;color: #7e22ce;border-color: #e9d5ff;}
+.chip-green{background: #F0FDF4;color: #15803D;border-color: #86EFAC;}
+.chip-purple{background: #EFF6FF;color: #1D4ED8;border-color: #BFDBFE;}
 
-/* STATS CARDS */
+/* STATS CARDS — 5 HARMONIOUS NATIONAL THEME GRADIENTS */
 .stats-grid{display: grid;grid-template-columns: repeat(auto-fit,minmax(200px,1fr));gap: 16px;margin-bottom: 22px;}
 .stat-card{
   background: #fff;
   border: 1px solid var(--border);
-  border-top: 3px solid var(--blue);
   padding: 16px 18px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   transition: all .2s ease;
 }
+.stat-card:nth-child(5n+1){border-top: 3.5px solid #D95A1E; background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);}
+.stat-card:nth-child(5n+1) .stat-n{color: #C2410C;}
+.stat-card:nth-child(5n+2){border-top: 3.5px solid #2563EB; background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFF 100%);}
+.stat-card:nth-child(5n+2) .stat-n{color: #1D4ED8;}
+.stat-card:nth-child(5n+3){border-top: 3.5px solid #16A34A; background: linear-gradient(180deg, #FFFFFF 0%, #F8FFF9 100%);}
+.stat-card:nth-child(5n+3) .stat-n{color: #15803D;}
+.stat-card:nth-child(5n+4){border-top: 3.5px solid #0A369D; background: linear-gradient(180deg, #FFFFFF 0%, #F6F8FF 100%);}
+.stat-card:nth-child(5n+4) .stat-n{color: #0A369D;}
+.stat-card:nth-child(5n+5){border-top: 3.5px solid #D97706; background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF5 100%);}
+.stat-card:nth-child(5n+5) .stat-n{color: #D97706;}
 .stat-card:hover{transform: translateY(-2px);box-shadow: var(--shadow-md);}
-.stat-n{font-size: 28px;font-weight: 700;color: var(--navy);line-height: 1.1;}
+.stat-n{font-size: 28px;font-weight: 700;line-height: 1.1;}
 .stat-l{font-size: 11px;font-weight: 700;color: var(--muted);text-transform: uppercase;letter-spacing: .5px;margin-top: 6px;}
 
 /* ALERTS */
@@ -337,18 +425,18 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   gap: 10px;
   line-height: 1.45;
 }
-.alert-success{background: #f0fdf4;border: 1px solid #bbf7d0;color: #166534;}
-.alert-error{background: #fef2f2;border: 1px solid #fecaca;color: #991b1b;}
-.alert-info{background: #eff6ff;border: 1px solid #bfdbfe;color: #1e40af;}
-.alert-warning{background: #fffbeb;border: 1px solid #fde68a;color: #92400e;}
+.alert-success{background: #EAF6EA;border: 1px solid #A8D9A8;color: #0F6606;}
+.alert-error{background: #FEF2F2;border: 1px solid #FECACA;color: #991B1B;}
+.alert-info{background: #FFF7ED;border: 1px solid #FED7AA;color: #7A4000;}
+.alert-warning{background: #FFFBE6;border: 1px solid #FFE080;color: #7A5200;}
 
 /* TOAST */
 .toast-box{position: fixed;top: 20px;right: 20px;z-index: 9999;min-width: 320px;max-width: 460px;}
 
 /* CANDIDATE MATCH CARD & 4-FACTOR METERS */
 .match-card{
-  border: 1px solid #bfdbfe;
-  background: #f8faff;
+  border: 1px solid #DDE3EE;
+  background: #FAFCFF;
   padding: 20px;
   border-radius: var(--radius-md);
   margin-bottom: 16px;
@@ -358,22 +446,23 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   box-shadow: var(--shadow-sm);
   transition: border-color .2s, box-shadow .2s;
 }
-.match-card:hover{border-color: var(--blue);box-shadow: var(--shadow-md);}
+.match-card:hover{border-color: #93C5FD;box-shadow: var(--shadow-md);}
 .match-left{flex: 1;}
-.match-title{font-size: 16px;font-weight: 700;color: var(--navy);display: flex;align-items: center;gap: 8px;flex-wrap: wrap;}
+.match-title{font-size: 16px;font-weight: 700;color: #0F172A;display: flex;align-items: center;gap: 8px;flex-wrap: wrap;}
 .match-score-badge{
-  background: #15803d;
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
   color: #fff;
-  padding: 3px 11px;
-  border-radius: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: .3px;
+  box-shadow: 0 1px 4px rgba(22,163,74,0.25);
 }
 .match-sub{font-size: 12px;color: var(--muted);margin: 6px 0 10px;}
 .match-desc{font-size: 13px;color: #334155;line-height: 1.5;margin-bottom: 12px;}
 
-/* 4-FACTOR SCORE BREAKDOWN METERS */
+/* 4-FACTOR SCORE BREAKDOWN METERS — ELEGANT GRADIENTS */
 .factor-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -389,10 +478,10 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 .factor-lbl b{color: var(--navy);font-weight: 700;}
 .factor-track{height: 6px;background: #e2e8f0;border-radius: 4px;overflow: hidden;}
 .factor-fill{height: 100%;border-radius: 4px;transition: width .5s ease;}
-.fill-blue{background: linear-gradient(90deg, #3b82f6, #1d4ed8);}
-.fill-purple{background: linear-gradient(90deg, #a855f7, #7e22ce);}
-.fill-green{background: linear-gradient(90deg, #22c55e, #15803d);}
-.fill-orange{background: linear-gradient(90deg, #f97316, #ea580c);}
+.fill-blue{background: linear-gradient(90deg, #3B82F6 0%, #1D4ED8 100%);}/* Problem Fit = Royal Blue */
+.fill-purple{background: linear-gradient(90deg, #6366F1 0%, #4338CA 100%);}/* TRL = Indigo */
+.fill-green{background: linear-gradient(90deg, #22C55E 0%, #15803D 100%);}/* Compliance = Green */
+.fill-orange{background: linear-gradient(90deg, #D4541B 0%, #B84718 100%);}/* Capacity = Saffron */
 
 .match-right{display: flex;flex-direction: column;justify-content: center;align-items: flex-end;gap: 10px;min-width: 220px;}
 
@@ -420,9 +509,9 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 }
 .escrow-timeline-fill{
   height: 100%;
-  background: linear-gradient(90deg, #22c55e, #15803d);
+  background: #16A34A;
   border-radius: 4px;
-  transition: width .5s ease;
+  transition: width .6s ease;
 }
 
 /* MILESTONE CARD */
@@ -445,13 +534,13 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   border-bottom: 1px solid var(--border);
 }
 .ms-body{padding: 16px;}
-.ms-amt{font-size: 18px;font-weight: 700;color: var(--navy);}
-.ms-approved{border-left: 4px solid #15803d;}
-.ms-submitted{border-left: 4px solid #1d4ed8;}
+.ms-amt{font-size: 18px;font-weight: 700;color: #15803D;}
+.ms-approved{border-left: 4px solid #15803D;}
+.ms-submitted{border-left: 4px solid #C2410C;}
 
 /* AUDIT BLOCK */
 .audit-row{
-  border-left: 4px solid #0b2545;
+  border-left: 4px solid #C2410C;
   padding: 12px 16px;
   background: #fff;
   margin-bottom: 10px;
@@ -462,14 +551,14 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   border-bottom: 1px solid var(--border);
 }
 .audit-header{display: flex;justify-content: space-between;font-size: 12px;color: var(--muted);margin-bottom: 6px;}
-.audit-hash{font-family: monospace;font-size: 11px;color: #0b2545;background: #eff6ff;padding: 3px 8px;border-radius: 4px;border: 1px solid #bfdbfe;}
+.audit-hash{font-family: monospace;font-size: 11px;color: #0A369D;background: #EFF6FF;padding: 3px 8px;border-radius: 4px;border: 1px solid #BFDBFE;}
 .audit-action{font-weight: 700;color: #0f172a;font-size: 13px;}
 
 /* MODAL */
 .modal-overlay{display: none;position: fixed;inset: 0;background: rgba(15,23,42,.6);backdrop-filter: blur(2px);z-index: 6000;align-items: center;justify-content: center;}
 .modal-overlay.show{display: flex;}
 .modal-box{background: #fff;border-radius: var(--radius-md);width: 100%;max-width: 680px;max-height: 90vh;overflow-y: auto;box-shadow: var(--shadow-lg);}
-.modal-hdr{background: linear-gradient(135deg, #071c36 0%, #0b2545 100%);color: #fff;padding: 14px 20px;display: flex;justify-content: space-between;align-items: center;}
+.modal-hdr{background: linear-gradient(135deg, #B84718 0%, #9A3412 100%);color: #fff;padding: 14px 20px;display: flex;justify-content: space-between;align-items: center;border-bottom: 2px solid #D97706;}
 .modal-body{padding: 24px;}
 .modal-close{background: none;border: none;color: #fff;font-size: 22px;cursor: pointer;}
 .divider{border: none;border-top: 1px solid var(--border);margin: 16px 0;}
@@ -480,86 +569,131 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 /* TABS */
 .tabs{display: flex;border-bottom: 2px solid var(--border);margin-bottom: 20px;}
 .tab{padding: 10px 20px;font-size: 13px;font-weight: 500;cursor: pointer;border-bottom: 2px solid transparent;margin-bottom: -2px;color: var(--muted);transition: all .15s;}
-.tab:hover{color: var(--navy);}
-.tab.active{border-bottom-color: #0b2545;color: #0b2545;font-weight: 700;}
+.tab:hover{color: #C2410C;}
+.tab.active{border-bottom-color: #C2410C;color: #C2410C;font-weight: 700;}
 .tab-content{display: none;}.tab-content.active{display: block;}
-.sec-title{font-size: 17px;font-weight: 700;color: var(--navy);border-bottom: 2px solid var(--navy);padding-bottom: 8px;margin-bottom: 18px;letter-spacing: .2px;}
+.sec-title{
+  font-size: 17px;
+  font-weight: 700;
+  color: #C2410C;
+  border-bottom: 2px solid #E2E8F0;
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  letter-spacing: .2px;
+}
+.sec-title::after{
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #D4541B, #B84718);
+}
 .breadcrumb{font-size: 12px;color: var(--muted);margin-bottom: 16px;}
-.breadcrumb span{cursor: pointer;color: var(--blue);font-weight: 600;}
+.breadcrumb span{cursor: pointer;color: #1D4ED8;font-weight: 600;}
 
 /* ROLE GRID */
-.role-grid{display: grid;grid-template-columns: 1fr 1fr;gap: 22px;max-width: 620px;margin: 0 auto 28px;}
+.role-grid{display: grid;grid-template-columns: 1fr 1fr;gap: 22px;max-width: 700px;margin: 0 auto 28px;}
 .role-card{
   background: #fff;
-  border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 24px;
+  border: 1.5px solid #EAEAEA;
+  border-radius: 16px;
+  padding: 32px 24px 24px;
   text-align: center;
   cursor: pointer;
-  transition: all .2s ease;
-  box-shadow: var(--shadow-sm);
+  transition: all .25s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .role-card:hover{
-  border-color: var(--blue);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
-.role-icon{font-size: 40px;margin-bottom: 12px;}
-.role-title{font-size: 16px;font-weight: 700;color: var(--navy);}
-.role-desc{font-size: 12px;color: var(--muted);margin-top: 6px;line-height: 1.4;}
+.role-icon{
+  font-size: 52px;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.role-title{font-size: 16px;font-weight: 700;}
+.role-desc{font-size: 12.5px;color: #64748B;margin-top: 4px;line-height: 1.5;}
+.role-btn{
+  margin-top: 12px;
+  display: inline-block;
+  padding: 9px 28px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #fff;
+  cursor: pointer;
+  transition: all .2s;
+}
 
 /* LOGIN WRAP */
 .login-wrap{min-height: calc(100vh - 160px);display: flex;align-items: center;justify-content: center;padding: 24px;}
 .login-box{background: #fff;border: 1px solid var(--border);width: 100%;max-width: 440px;box-shadow: var(--shadow-lg);border-radius: var(--radius-md);overflow: hidden;}
-.login-hdr{background: linear-gradient(135deg, #071c36 0%, #0b2545 100%);color: #fff;padding: 18px 24px;text-align: center;}
+.login-hdr{background: linear-gradient(135deg, #B84718 0%, #9A3412 100%);color: #fff;padding: 18px 24px;text-align: center;border-bottom: 2px solid #D97706;}
 .login-hdr h2{font-size: 16px;font-weight: 700;}
-.login-hdr p{font-size: 12px;color: #bfdbfe;margin-top: 4px;}
+.login-hdr p{font-size: 12px;color: #FFF7ED;margin-top: 4px;}
 .login-body{padding: 26px;}
 
-/* UIVERSE LOGIN CARD (by micaelgomestavares) */
+/* UIVERSE LOGIN & REGISTRATION CARD */
 .login-form-uiverse {
   display: flex;
   flex-direction: column;
   gap: 12px;
   background-color: #ffffff;
-  padding: 34px 30px;
+  padding: 30px 28px;
   width: 100%;
-  max-width: 450px;
+  max-width: 520px;
   border-radius: 20px;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border);
+  transition: all .25s ease;
 }
 .login-form-uiverse .flex-column > label {
   color: #151717;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 13px;
+  margin-bottom: 3px;
 }
 .login-form-uiverse .inputForm {
   border: 1.5px solid #ecedec;
   border-radius: 10px;
-  height: 50px;
+  height: 46px;
   display: flex;
   align-items: center;
-  padding-left: 14px;
+  padding-left: 12px;
   transition: 0.2s ease-in-out;
   background: #fff;
 }
 .login-form-uiverse .input {
-  margin-left: 10px;
+  margin-left: 8px;
   border-radius: 10px;
   border: none;
-  width: 88%;
+  width: 90%;
   height: 100%;
   font-size: 13.5px;
   color: #151717;
   background: transparent;
 }
+.login-form-uiverse select.input {
+  cursor: pointer;
+  padding-right: 12px;
+}
 .login-form-uiverse .input:focus {
   outline: none;
 }
 .login-form-uiverse .inputForm:focus-within {
-  border: 1.5px solid #2d79f3;
-  box-shadow: 0 0 0 3px rgba(45, 121, 243, 0.12);
+  border: 1.5px solid #C2410C;
+  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.15);
+}
+.login-form-uiverse .inputForm.buyer-focus:focus-within {
+  border: 1.5px solid #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 .login-form-uiverse .flex-row {
   display: flex;
@@ -577,7 +711,7 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 }
 .login-form-uiverse .span {
   font-size: 13px;
-  color: #2d79f3;
+  color: #C2410C;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
@@ -586,30 +720,92 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   text-decoration: underline;
 }
 .login-form-uiverse .button-submit {
-  margin: 14px 0 6px 0;
-  background-color: #0b2545;
+  margin: 10px 0 4px 0;
+  background: linear-gradient(135deg, #D4541B 0%, #B84718 100%);
   border: none;
   color: white;
   font-size: 14.5px;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 10px;
   height: 48px;
   width: 100%;
   cursor: pointer;
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 12px rgba(184, 71, 24, 0.25);
+  transition: all 0.2s;
 }
 .login-form-uiverse .button-submit:hover {
-  background-color: #1d4ed8;
+  background: linear-gradient(135deg, #C2410C 0%, #9A3412 100%);
+  box-shadow: 0 6px 16px rgba(184, 71, 24, 0.35);
+}
+.login-form-uiverse .button-submit.btn-buyer {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+.login-form-uiverse .button-submit.btn-buyer:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 .login-form-uiverse .p {
   text-align: center;
   color: #64748b;
   font-size: 13px;
-  margin: 8px 0 0 0;
+  margin: 6px 0 0 0;
+}
+.auth-tab-btn {
+  transition: all .2s ease;
+}
+.auth-tab-btn.active {
+  background: #ffffff !important;
+  color: #0F172A !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+}
+.role-pill-btn {
+  transition: all .15s ease;
+}
+.reg-role-btn {
+  transition: all .15s ease;
 }
 
-/* FOOTER */
-.gov-footer{background: #0b2545;color: #bfdbfe;padding: 20px;text-align: center;font-size: 11.5px;margin-top: auto;border-top: 1px solid rgba(255,255,255,.08);}
+/* FOOTER WITH INDIAN HERITAGE SKYLINE */
+.gov-footer-wrapper{
+  margin-top: auto;
+  width: 100%;
+}
+.footer-skyline-band{
+  width: 100%;
+  background: linear-gradient(180deg, rgba(245,247,250,0) 0%, #FFF5E6 50%, #FFE9CC 100%);
+  border-top: 1px solid #FED7AA;
+  padding: 22px 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.footer-skyline-inner{
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-skyline-img{
+  width: 100%;
+  max-height: 96px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 -2px 6px rgba(204,102,0,0.12));
+}
+/* Hide lower duplicate skyline on landing page and login page */
+body:has(#page-landing.active) .footer-skyline-band,
+body:has(#page-login.active) .footer-skyline-band {
+  display: none !important;
+}
+.gov-footer{
+  background: linear-gradient(105deg, #431407 0%, #632508 50%, #351004 100%);
+  color: #FED7AA;
+  padding: 20px 24px;
+  font-size: 11.5px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
 
 @media(max-width:768px){
   .form-row{grid-template-columns: 1fr;}
@@ -625,8 +821,8 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
-  border: 1px solid #bfdbfe;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
   padding: 14px 18px;
   border-radius: var(--radius-md);
   margin-bottom: 18px;
@@ -772,7 +968,7 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   background: var(--blue);
   color: #fff;
   border-color: var(--blue);
-  box-shadow: 0 1px 3px rgba(29,78,216,.3);
+  box-shadow: 0 1px 3px rgba(204, 102, 0,.3);
 }
 .proof-pane { display: none; }
 .proof-pane.active { display: block; }
@@ -837,23 +1033,44 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 
 <!-- TOP STRIP -->
 <div class="top-strip">
-  <span>&#x1F1EE;&#x1F1F3; Government of India &nbsp;|&nbsp; Public Procurement Innovation Cell &nbsp;|&nbsp; GFR 2017 Rule 173 Govt Trial Portal</span>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span>&#x1F1EE;&#x1F1F3; Government of India</span>
+    <span style="opacity:0.35;">|</span>
+    <img src="/static/ashoka_chakra.svg" alt="Ashoka Chakra" style="width:15px;height:15px;filter:drop-shadow(0 0 2px rgba(255,255,255,0.7));vertical-align:middle;">
+    <span>Public Procurement Innovation Cell &bull; GFR 2017 Rule 173 Sandbox Portal</span>
+  </div>
   <span id="top-time"></span>
 </div>
 
-<!-- HEADER -->
+<!-- HEADER WITH SETU WHEEL LOGO & ASHOKA CHAKRA -->
 <div class="gov-header">
-  <div class="gov-emblem" title="National Emblem of India">&#x269C;</div>
-  <div>
-    <div class="gov-name-en">SETU &mdash; Govt Innovation Trial &amp; Fast-Track Procurement Portal</div>
-    <div class="gov-name-hi">सेतु &mdash; नवोन्मेष मूल्यांकन एवं परीक्षण पोर्टल (GFR 2017 नियम 173)</div>
-    <div class="gov-tagline">Govt Technology Trial Platform &bull; Smart AI Matching &bull; 100% CVC Audit-Proof Digital Ledger</div>
+  <div class="gov-emblem" title="SETU Innovation Portal">
+    <img src="/static/setu_wheel_logo.png" alt="SETU Wheel Logo" style="width:42px;height:42px;object-fit:contain;display:block;">
   </div>
-  <div class="gov-header-right" id="header-user-info"></div>
+  <div>
+    <div class="gov-name-en"><span style="color:#FFFFFF;font-weight:900;letter-spacing:.5px;text-shadow:0 1px 3px rgba(0,0,0,0.3);">SETU</span> &mdash; Govt Innovation Trial &amp; Fast-Track Procurement Portal</div>
+    <div class="gov-name-hi">सेतु &mdash; नवोन्मेष मूल्यांकन एवं परीक्षण पोर्टल (GFR 2017 नियम 173)</div>
+    <div class="gov-tagline">Govt Technology Trial Platform &bull; <span style="color:#93C5FD;">Smart AI Matching</span> &bull; <span style="color:#86EFAC;">100% CVC Audit-Proof Digital Ledger</span></div>
+  </div>
+  <div class="gov-header-right" id="header-user-info">
+    <div style="display:flex;align-items:center;gap:12px;justify-content:flex-end;">
+      <div style="text-align:right;">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:#94A3B8;font-weight:700;">National Sandbox</div>
+        <div style="font-size:11.5px;color:#FED7AA;font-weight:600;">DPIIT &bull; GeM &bull; MoC&amp;I</div>
+      </div>
+      <div style="width:42px;height:42px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.25);border:1.5px solid #BFDBFE;padding:3px;" title="Ashoka Chakra — 24 Spokes of Innovation">
+        <img src="/static/ashoka_chakra.svg" alt="Ashoka Chakra" style="width:34px;height:34px;display:block;">
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- TRICOLOR -->
-<div class="tricolor"></div>
+<!-- TRICOLOR RIBBON WITH ASHOKA CHAKRA EMBLEM -->
+<div style="position:relative;height:5px;background:linear-gradient(90deg,#D95A1E 0%,#C2410C 33.3%,#ffffff 33.3% 66.6%,#16A34A 66.6%,#138808 100%);">
+  <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;background:#fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.25);border:1px solid #CBD5E1;display:flex;align-items:center;justify-content:center;z-index:2;">
+    <img src="/static/ashoka_chakra.svg" alt="Ashoka Chakra" style="width:15px;height:15px;display:block;" title="Ashoka Chakra — 24 Spokes">
+  </div>
+</div>
 
 <!-- NAVIGATION BAR -->
 <div class="gov-nav" id="main-nav" style="display:none;">
@@ -862,7 +1079,7 @@ textarea.form-control{resize: vertical;min-height: 85px;}
     <button class="nav-btn" onclick="navTo('buyer-post')">&#10010; Post Govt Need</button>
     <button class="nav-btn" onclick="navTo('buyer-challenges')">&#128203; Govt Needs &amp; Trials</button>
     <button class="nav-btn" onclick="navTo('buyer-pilots')">&#128202; Live Field Trials</button>
-    <button class="nav-btn" id="nav-btn-pitches" onclick="navTo('buyer-pitches')">&#128236; Pitches Received <span id="buyer-notif-badge" class="badge" style="background:#ea580c;color:#fff;display:none;margin-left:4px;padding:2px 7px;border-radius:10px;font-size:11px;">0</span></button>
+    <button class="nav-btn" id="nav-btn-pitches" onclick="navTo('buyer-pitches')">&#128236; Pitches Received <span id="buyer-notif-badge" class="badge" style="background:#C2410C;color:#fff;display:none;margin-left:4px;padding:2px 7px;border-radius:10px;font-size:11px;">0</span></button>
     <button class="nav-btn" onclick="navTo('gem-search')">&#128269; Search GeM</button>
     <button class="nav-btn" onclick="navTo('audit-ledger')">&#128737; Audit Trail</button>
   </div>
@@ -900,88 +1117,341 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 
 <!-- 1. LANDING PAGE -->
 <div class="page active" id="page-landing">
-  <!-- Official GeM 10th Year Celebratory Banner -->
-  <div style="max-width:960px;margin:10px auto 20px;border-radius:6px;overflow:hidden;box-shadow:0 4px 14px rgba(0,51,102,.12);border:1px solid #B0C8E8;">
-    <img src="/static/gem_banner.png" alt="GeM 10 Years - भरोसे और बदलाव का दशक" style="width:100%;height:auto;display:block;">
+  <!-- Banner — Setu 10 National Innovation Banner -->
+  <div style="max-width:960px;margin:10px auto 20px;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(204,102,0,.08);border:1px solid #FED7AA;">
+    <img src="/static/setu_10_banner.png" alt="Setu 10 — सशक्तिकरण और जुड़ाव का दशक" style="width:100%;height:auto;display:block;">
   </div>
 
-  <div style="text-align:center;padding:15px 20px 20px;">
-    <h2 style="font-size:22px;color:var(--navy);margin-bottom:6px;">Welcome to SETU &mdash; Govt Innovation Trial Portal</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:28px;">
-      Govt departments can safely test new technology in real field conditions without open tenders &mdash; Under <strong>General Financial Rules (GFR) 2017 Rule 173</strong>
+  <div style="text-align:center;padding:14px 20px 6px;">
+    <div style="display:inline-flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px;background:linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);padding:8px 24px;border-radius:999px;border:1.5px solid #E2E8F0;box-shadow:0 4px 16px rgba(15,39,68,0.06);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:46px;height:46px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(255,103,31,0.15);border:1.5px solid #FED7AA;padding:3px;">
+          <img src="/static/setu_wheel_logo.png" alt="SETU Wheel Logo" style="width:36px;height:36px;object-fit:contain;display:block;">
+        </div>
+        <div style="text-align:left;">
+          <div style="font-size:12.5px;font-weight:800;color:#C2410C;line-height:1.2;">SETU</div>
+          <div style="font-size:10px;color:#64748B;font-weight:600;">Innovation Portal</div>
+        </div>
+      </div>
+      <span style="height:26px;width:1.5px;background:#E2E8F0;"></span>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:46px;height:46px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(10,54,157,0.15);border:1.5px solid #BFDBFE;padding:3px;">
+          <img src="/static/ashoka_chakra.svg" alt="Ashoka Chakra" style="width:34px;height:34px;display:block;" title="Ashoka Chakra — 24 Spokes">
+        </div>
+        <div style="text-align:left;">
+          <div style="font-size:12.5px;font-weight:800;color:#0A369D;line-height:1.2;">Make In India</div>
+          <div style="font-size:10px;color:#64748B;font-weight:600;">National Sandbox</div>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-size:25px;color:#0F172A;margin-bottom:6px;font-weight:800;letter-spacing:-.2px;">
+      Welcome to <span style="background:linear-gradient(135deg, #D4541B 0%, #B84718 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">SETU</span> &mdash; Govt Innovation Trial Portal
+    </h2>
+    <p style="font-size:14px;color:#64748B;margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6;">
+      Govt departments can safely test new technology in real field conditions without open tenders &mdash; Under <strong style="color:#C2410C;">General Financial Rules (GFR) 2017 Rule 173</strong>
     </p>
-    <div class="role-grid">
-      <div class="role-card" onclick="showLoginPage('buyer')">
-        <div class="role-icon">&#127963;</div>
-        <div class="role-title">Govt Officer / Buyer Login</div>
-        <div class="role-desc">Municipalities, Smart Cities &amp; Govt Offices looking to test innovative solutions on the ground</div>
-      </div>
-      <div class="role-card" onclick="showLoginPage('seller')">
-        <div class="role-icon">&#127970;</div>
-        <div class="role-title">Supplier / Seller Login</div>
-        <div class="role-desc">DPIIT-recognized startups &amp; GeM verified sellers ready to demonstrate their products in real field trials</div>
-      </div>
-    </div>
-
   </div>
 
-  <div class="card" style="max-width:820px;margin:15px auto;border:1px solid #B0C8E8;">
-    <div class="card-header" style="background:#003366;font-size:14px;">
-      &#9878; How This Works: GFR 2017 Rule 173 (Govt Technology Trial Framework)
+  <!-- Role Cards — Balanced Blue (Buyer) & Saffron (Startup) with Login & Register Options -->
+  <div class="role-grid">
+    <div class="role-card" style="border-color:#BFDBFE;background:linear-gradient(180deg, #FFFFFF 0%, #F4F8FF 100%);box-shadow:0 2px 12px rgba(37,99,235,.07);cursor:default;">
+      <div class="role-icon">🏛️</div>
+      <div class="role-title" style="color:#1D4ED8;">Govt Officer / Buyer Portal</div>
+      <div class="role-desc">Municipalities, Smart Cities &amp; Govt Offices looking to test innovative solutions on the ground</div>
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center;width:100%;">
+        <button type="button" class="role-btn" onclick="showLoginPage('buyer', 'login')" style="border:1.5px solid #2563EB;background:linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);color:#fff;box-shadow:0 2px 6px rgba(37,99,235,.25);cursor:pointer;flex:1;min-width:130px;padding:9px 16px;">
+          Login as Officer &rarr;
+        </button>
+        <button type="button" class="role-btn" onclick="showLoginPage('buyer', 'register')" style="border:1.5px solid #93C5FD;background:#EFF6FF;color:#1D4ED8;box-shadow:0 1px 4px rgba(37,99,235,.12);cursor:pointer;flex:1;min-width:130px;padding:9px 16px;">
+          + Register as Buyer
+        </button>
+      </div>
     </div>
-    <div class="card-body" style="font-size:13px;color:#222;line-height:1.8;">
-      Normally in government tenders, officers are forced to pick the lowest bidder (L1), even if their product fails. 
-      Under <strong>GFR 2017 Rule 173</strong>, government departments have the legal power to bypass tenders and run <strong>safe, controlled field trials (Sandboxes)</strong> to test if innovative technology actually works before spending full public funds:
-      <ul style="margin:10px 0 10px 22px;">
-        <li><strong>Smart 4-Factor AI Matching:</strong> Govt officers state their civic problem (e.g. drain flood sensors or drone surveillance); AI instantly matches verified Indian startups and GeM sellers on technical capability.</li>
-        <li><strong>Safe 3-Stage Trial Agreement (MoU):</strong> No advance loss! Budget is locked safely and paid step-by-step: <strong>20% Setup</strong>, <strong>50% Working Proof</strong> (must work in the field), and <strong>30% Final Handover</strong>.</li>
-        <li><strong>100% Vigilance &amp; CVC Protection:</strong> Every trial approval, sensor data proof, and payment release is locked in an unbreakable digital audit ledger with SHA-256 proof.</li>
-        <li><strong>GeM Fast-Track Purchase Certificate:</strong> Once the product successfully passes the field trial, the seller gets an official certificate to sell directly to any government department in India on GeM without tenders!</li>
+    <div class="role-card" style="border-color:#FED7AA;background:linear-gradient(180deg, #FFFFFF 0%, #FFF9F4 100%);box-shadow:0 2px 12px rgba(234,88,12,.07);cursor:default;">
+      <div class="role-icon">🚀</div>
+      <div class="role-title" style="color:#C2410C;">Supplier / Seller Portal</div>
+      <div class="role-desc">DPIIT-recognized startups &amp; GeM verified sellers ready to demonstrate their products in real field trials</div>
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center;width:100%;">
+        <button type="button" class="role-btn" onclick="showLoginPage('seller', 'login')" style="border:1.5px solid #9A3412;background:linear-gradient(135deg, #D4541B 0%, #B84718 100%);color:#fff;box-shadow:0 2px 6px rgba(184,71,24,.25);cursor:pointer;flex:1;min-width:130px;padding:9px 16px;">
+          Login as Startup &rarr;
+        </button>
+        <button type="button" class="role-btn" onclick="showLoginPage('seller', 'register')" style="border:1.5px solid #FDBA74;background:#FFF7ED;color:#C2410C;box-shadow:0 1px 4px rgba(184,71,24,.12);cursor:pointer;flex:1;min-width:130px;padding:9px 16px;">
+          + Register as Seller
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it Works — Tricolor Step Flow -->
+  <div style="max-width:820px;margin:10px auto 28px;background:#fff;border:1.5px solid #E2E8F0;border-radius:16px;padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,.04);">
+    <div style="text-align:center;margin-bottom:22px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C2410C;margin-bottom:6px;">How It Works</div>
+      <div style="font-size:18px;font-weight:800;color:#0F172A;">GFR 2017 Rule 173 &mdash; 4-Step Sandbox Process</div>
+    </div>
+
+    <div class="step-flow">
+      <div class="step-item">
+        <div class="step-icon-wrap" style="background:#FFF7ED;border:1.5px solid #FED7AA;">🎯</div>
+        <div class="step-label">Post Outcome<br>Challenge</div>
+      </div>
+      <div class="step-arrow" style="color:#C2410C;">→</div>
+      <div class="step-item">
+        <div class="step-icon-wrap" style="background:#EFF6FF;border:1.5px solid #BFDBFE;">🤖</div>
+        <div class="step-label">AI Matches<br>Best Startups</div>
+      </div>
+      <div class="step-arrow" style="color:#2563EB;">→</div>
+      <div class="step-item">
+        <div class="step-icon-wrap" style="background:#FFF7ED;border:1.5px solid #FED7AA;">📄</div>
+        <div class="step-label">Sign MoU &amp;<br>Lock Escrow</div>
+      </div>
+      <div class="step-arrow" style="color:#16A34A;">→</div>
+      <div class="step-item">
+        <div class="step-icon-wrap" style="background:#F0FDF4;border:1.5px solid #BBF7D0;">✅</div>
+        <div class="step-label">Verify Milestones<br>&amp; Disburse</div>
+      </div>
+      <div class="step-arrow" style="color:#D97706;">→</div>
+      <div class="step-item">
+        <div class="step-icon-wrap" style="background:#FEF3C7;border:1.5px solid #FDE047;">🏆</div>
+        <div class="step-label">GeM Scale-Up<br>Certificate</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:10px;">
+      <button class="btn btn-primary" onclick="showLoginPage('buyer')" style="padding:12px 36px;font-size:14px;border-radius:999px;">
+        Get Started &rarr;
+      </button>
+    </div>
+  </div>
+
+  <!-- GFR Info Card — Saffron Header with Gold Accent -->
+  <div style="max-width:820px;margin:0 auto;background:#fff;border:1.5px solid #FED7AA;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04);">
+    <div style="background:linear-gradient(135deg, #B84718 0%, #9A3412 100%);padding:14px 22px;color:#fff;font-size:14px;font-weight:700;border-bottom:2px solid #D97706;display:flex;align-items:center;gap:8px;">
+      ⚓ How This Works: GFR 2017 Rule 173 (Govt Technology Trial Framework)
+    </div>
+    <div style="padding:20px 24px;font-size:13px;color:#334155;line-height:1.85;">
+      Normally in government tenders, officers are forced to pick the lowest bidder (L1), even if their product fails.
+      Under <strong style="color:#C2410C;">GFR 2017 Rule 173</strong>, government departments have the legal power to bypass tenders and run <strong style="color:#138808;">safe, controlled field trials (Sandboxes)</strong> to test if innovative technology actually works before spending full public funds:
+      <ul style="margin:12px 0 0 22px;display:flex;flex-direction:column;gap:8px;">
+        <li><strong style="color:#C2410C;">Smart 4-Factor AI Matching:</strong> Govt officers state their civic problem; AI instantly matches verified Indian startups on technical capability.</li>
+        <li><strong style="color:#2563EB;">Safe 3-Stage Trial Agreement (MoU):</strong> Budget is locked safely and paid step-by-step: <strong>20% Setup</strong>, <strong>50% Working Proof</strong>, and <strong>30% Final Handover</strong>.</li>
+        <li><strong style="color:#1E293B;">100% CVC Protection:</strong> Every approval and payment is locked in an unbreakable SHA-256 audit ledger.</li>
+        <li><strong style="color:#138808;">GeM Fast-Track Certificate:</strong> Once the trial passes, the seller gets an official certificate to sell on GeM without tenders!</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- National Innovation Heritage Showcase -->
+  <div style="max-width:820px;margin:22px auto 8px;background:#fff;border:1.5px solid #FED7AA;border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.04);text-align:center;padding:22px 24px 16px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C2410C;margin-bottom:6px;">
+      <img src="/static/ashoka_chakra.svg" alt="Ashoka Chakra" style="width:16px;height:16px;display:inline-block;vertical-align:middle;">
+      National Innovation Ecosystem &bull; Make in India &bull; DPIIT
+    </div>
+    <div style="font-size:17px;font-weight:800;color:#C2410C;margin-bottom:6px;">
+      Empowering Startups Across Every State of India
+    </div>
+    <p style="font-size:12.5px;color:#64748B;max-width:640px;margin:0 auto 16px;line-height:1.6;">
+      From Gateway of India to India Gate, from Charminar to the Taj &mdash; SETU connects cutting-edge deep-tech startups directly with public sector trials across all 28 States &amp; 8 UTs.
+    </p>
+    <div style="margin-top:10px;">
+      <img src="/static/monuments_saffron_green_hd.png" alt="Indian Heritage Monuments Skyline" style="max-width:100%;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 2px 8px rgba(234,88,12,0.12));">
     </div>
   </div>
 </div>
 
-<!-- 2. LOGIN PAGE -->
+<!-- 2. LOGIN & REGISTRATION PAGE -->
 <div class="page" id="page-login">
-  <div class="login-wrap">
-    <form class="login-form-uiverse" onsubmit="event.preventDefault(); doLogin();">
-      <div style="margin-bottom: 12px; text-align: center;">
-        <h2 id="login-title" style="font-size: 20px; font-weight: 700; color: #0b2545; letter-spacing: -0.3px;">Govt Officer / Buyer Login</h2>
+  <div class="login-wrap" style="padding:28px 16px;">
+    <div class="login-form-uiverse" style="max-width:520px;width:100%;">
+      
+      <!-- AUTH MODE NAVIGATION TABS -->
+      <div style="display:flex;gap:4px;background:#F1F5F9;padding:4px;border-radius:12px;margin-bottom:18px;">
+        <button type="button" class="auth-tab-btn active" id="tab-btn-signin" onclick="setAuthMode('login')" style="flex:1;padding:9px 12px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:#0F172A;box-shadow:0 1px 4px rgba(0,0,0,0.08);">
+          🔑 Sign In
+        </button>
+        <button type="button" class="auth-tab-btn" id="tab-btn-reg-buyer" onclick="setAuthMode('register', 'buyer')" style="flex:1;padding:9px 12px;border:none;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;background:transparent;color:#64748B;">
+          🏛️ Register as Buyer
+        </button>
+        <button type="button" class="auth-tab-btn" id="tab-btn-reg-seller" onclick="setAuthMode('register', 'seller')" style="flex:1;padding:9px 12px;border:none;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;background:transparent;color:#64748B;">
+          🚀 Register as Seller
+        </button>
+      </div>
+
+      <!-- HEADER & SUBTITLE -->
+      <div style="margin-bottom:14px;text-align:center;">
+        <div id="auth-badge" style="display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:3px 12px;border-radius:999px;background:#EFF6FF;color:#1D4ED8;margin-bottom:8px;border:1px solid #BFDBFE;">
+          Govt Officer Portal
+        </div>
+        <h2 id="login-title" style="font-size:21px;font-weight:800;color:#0F172A;letter-spacing:-0.3px;margin:0;">Govt Officer / Buyer Login</h2>
+        <p id="login-subtitle" style="font-size:12.5px;color:#64748B;margin-top:4px;">Sign in with your official government credentials</p>
       </div>
 
       <div id="login-error"></div>
 
-      <div class="flex-column">
-        <label>Email or Username</label>
-      </div>
-      <div class="inputForm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        <input class="input" id="login-email" placeholder="e.g. buyer or buyer@pune.gov.in" autocomplete="username">
-      </div>
-
-      <div class="flex-column" style="margin-top: 4px;">
-        <label>Password</label>
-      </div>
-      <div class="inputForm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        <input class="input" type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password">
-      </div>
-
-      <div class="flex-row">
-        <div style="display: flex; align-items: center; gap: 6px;">
-          <input type="checkbox" id="remember-me" style="cursor: pointer;">
-          <label for="remember-me">Remember me</label>
+      <!-- ================= SIGN IN FORM ================= -->
+      <form id="form-signin" onsubmit="event.preventDefault(); doLogin();" style="display:flex;flex-direction:column;gap:12px;">
+        
+        <!-- ROLE SELECTOR PILLS FOR SIGN IN -->
+        <div style="display:flex;gap:8px;margin-bottom:4px;justify-content:center;">
+          <button type="button" class="role-pill-btn" id="role-pill-buyer" onclick="setLoginRole('buyer')" style="padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;border:1.5px solid #2563EB;background:#EFF6FF;color:#1D4ED8;cursor:pointer;">
+            🏛️ Govt Buyer
+          </button>
+          <button type="button" class="role-pill-btn" id="role-pill-seller" onclick="setLoginRole('seller')" style="padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;border:1.5px solid #E2E8F0;background:#fff;color:#64748B;cursor:pointer;">
+            🚀 Startup / Seller
+          </button>
         </div>
-        <span class="span" onclick="toast('Please contact your nodal officer for credential reset.', 'info')">Forgot password?</span>
-      </div>
 
-      <button type="submit" class="button-submit">Sign In to Portal</button>
+        <div class="flex-column">
+          <label id="login-email-label">Official Email or Username</label>
+        </div>
+        <div class="inputForm" id="inputform-login-email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <input class="input" id="login-email" placeholder="e.g. buyer or buyer@pune.gov.in" autocomplete="username">
+        </div>
 
-      <p class="p">
-        <a href="#" onclick="showPage('page-landing')" class="span" style="color: #64748b;">&#8592; Back to Home</a>
+        <div class="flex-column" style="margin-top:2px;">
+          <label>Password</label>
+        </div>
+        <div class="inputForm" id="inputform-login-password">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <input class="input" type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password">
+        </div>
+
+        <div class="flex-row">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <input type="checkbox" id="remember-me" style="cursor:pointer;" checked>
+            <label for="remember-me">Remember me</label>
+          </div>
+          <span class="span" onclick="toast('Please contact your department administrator for credential assistance.', 'info')">Need help?</span>
+        </div>
+
+        <button type="submit" class="button-submit" id="btn-login-submit">Sign In to Portal</button>
+
+        <div style="text-align:center;margin-top:6px;font-size:12.5px;color:#64748B;">
+          Don't have an account yet?
+          <span style="color:#1D4ED8;font-weight:700;cursor:pointer;text-decoration:underline;margin-left:4px;" onclick="setAuthMode('register', 'buyer')">Register as Buyer</span>
+          &bull;
+          <span style="color:#C2410C;font-weight:700;cursor:pointer;text-decoration:underline;" onclick="setAuthMode('register', 'seller')">Register as Seller</span>
+        </div>
+      </form>
+
+      <!-- ================= REGISTRATION FORM ================= -->
+      <form id="form-register" onsubmit="event.preventDefault(); doRegister();" style="display:none;flex-direction:column;gap:11px;">
+        
+        <!-- ROLE SELECTOR TABS INSIDE REGISTER -->
+        <div style="display:flex;gap:8px;margin-bottom:4px;">
+          <button type="button" class="reg-role-btn" id="reg-role-buyer" onclick="setRegisterRole('buyer')" style="flex:1;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:700;border:1.5px solid #2563EB;background:#EFF6FF;color:#1D4ED8;cursor:pointer;">
+            🏛️ Govt Officer / Buyer
+          </button>
+          <button type="button" class="reg-role-btn" id="reg-role-seller" onclick="setRegisterRole('seller')" style="flex:1;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:600;border:1.5px solid #E2E8F0;background:#fff;color:#64748B;cursor:pointer;">
+            🚀 Startup / Supplier
+          </button>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <div class="flex-column"><label id="reg-name-label">Full Name / Nodal Officer *</label></div>
+            <div class="inputForm" style="height:44px;">
+              <input class="input" id="reg-name" placeholder="e.g. Dr. Rajesh Verma" required>
+            </div>
+          </div>
+          <div>
+            <div class="flex-column"><label id="reg-org-label">Organization / Department *</label></div>
+            <div class="inputForm" style="height:44px;">
+              <input class="input" id="reg-org" placeholder="e.g. Pune Municipal Corporation" required>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex-column"><label id="reg-email-label">Official Email Address *</label></div>
+          <div class="inputForm" style="height:44px;">
+            <input class="input" type="email" id="reg-email" placeholder="e.g. officer@pune.gov.in" required autocomplete="email">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <div class="flex-column"><label>Password *</label></div>
+            <div class="inputForm" style="height:44px;">
+              <input class="input" type="password" id="reg-password" placeholder="Create password" required autocomplete="new-password">
+            </div>
+          </div>
+          <div>
+            <div class="flex-column"><label>Confirm Password *</label></div>
+            <div class="inputForm" style="height:44px;">
+              <input class="input" type="password" id="reg-confirm-password" placeholder="Confirm password" required autocomplete="new-password">
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <div class="flex-column"><label>State / UT *</label></div>
+            <div class="inputForm" style="height:44px;">
+              <select class="input" id="reg-state">
+                <option value="Maharashtra" selected>Maharashtra</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Other">Other State / UT</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <div class="flex-column"><label>Phone Number (Optional)</label></div>
+            <div class="inputForm" style="height:44px;">
+              <input class="input" id="reg-phone" placeholder="e.g. +91 98201 23456">
+            </div>
+          </div>
+        </div>
+
+        <!-- SELLER SPECIFIC EXTRA FIELDS -->
+        <div id="seller-extra-fields" style="display:none;flex-direction:column;gap:10px;">
+          <div>
+            <div class="flex-column"><label>Solution Title &amp; Domain *</label></div>
+            <div class="inputForm" style="height:44px;">
+              <input class="input" id="reg-domain" placeholder="e.g. Smart IoT Drainage Telemetry &amp; Urban Flood Monitoring">
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div>
+              <div class="flex-column"><label>DPIIT Recognition Number</label></div>
+              <div class="inputForm" style="height:44px;">
+                <input class="input" id="reg-dpiit" placeholder="e.g. DIPP10482 (Optional)">
+              </div>
+            </div>
+            <div>
+              <div class="flex-column"><label>GeM Seller ID (Optional)</label></div>
+              <div class="inputForm" style="height:44px;">
+                <input class="input" id="reg-gem" placeholder="e.g. GEM-55912">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="button-submit" id="btn-register-submit">
+          Complete Registration as Buyer &rarr;
+        </button>
+
+        <div style="text-align:center;margin-top:6px;font-size:12.5px;color:#64748B;">
+          Already registered?
+          <span style="color:#1D4ED8;font-weight:700;cursor:pointer;text-decoration:underline;margin-left:4px;" onclick="setAuthMode('login')">Sign In here</span>
+        </div>
+      </form>
+
+      <p class="p" style="margin-top:12px;">
+        <a href="#" onclick="showPage('page-landing')" class="span" style="color:#64748b;font-size:12px;">&#8592; Back to Home</a>
       </p>
-    </form>
+    </div>
   </div>
 </div>
 
@@ -990,12 +1460,12 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   <div class="stats-grid" id="buyer-stats"></div>
   <!-- INCOMING STARTUP PROPOSALS & REVERSE AI RELEVANCE -->
   <div class="card" id="buyer-pitches-card">
-    <div class="card-header" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);">
+    <div class="card-header">
       <div style="display:flex;align-items:center;gap:8px;">
         <span>&#128236; Incoming Startup Pitches &amp; Reverse AI Relevance Matches</span>
-        <span class="badge" id="buyer-pitches-count-badge" style="background:#fff;color:#1e3a8a;font-weight:700;">0 Pitches</span>
+        <span class="badge" id="buyer-pitches-count-badge" style="background:#fff;color:#EA580C;font-weight:700;">0 Pitches</span>
       </div>
-      <small style="color:#dbeafe;font-size:11.5px;font-weight:normal;">Real-time technical pitches submitted by verified DPIIT/GeM suppliers</small>
+      <small style="color:#FFF7ED;font-size:11.5px;font-weight:normal;">Real-time technical pitches submitted by verified DPIIT/GeM suppliers</small>
     </div>
     <div class="card-body" id="buyer-pitches-container" style="padding:16px;">
       <div class="empty-state">Loading incoming startup proposals...</div>
@@ -1130,19 +1600,19 @@ textarea.form-control{resize: vertical;min-height: 85px;}
   <div class="stats-grid" id="seller-stats"></div>
 
   <!-- DISCOVERY BANNER -->
-  <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-radius:var(--radius-md);padding:16px 20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow-sm);flex-wrap:wrap;gap:12px;">
+  <div style="background:#FFF7ED;border:1px solid #FED7AA;border-radius:var(--radius-md);padding:16px 20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow-sm);flex-wrap:wrap;gap:12px;">
     <div>
-      <h3 style="color:var(--navy);font-size:15px;margin-bottom:4px;">&#128269; Explore Open Govt Needs with Instant AI Match</h3>
-      <p style="color:#1e40af;font-size:12.5px;margin:0;">Discover civic outcome challenges posted by municipal corporations and submit a direct technical pitch with AI relevance scoring.</p>
+      <h3 style="color:#C2410C;font-size:15px;margin-bottom:4px;">&#128269; Explore Open Govt Needs with Instant AI Match</h3>
+      <p style="color:#64748B;font-size:12.5px;margin:0;">Discover civic outcome challenges posted by municipal corporations and submit a direct technical pitch with AI relevance scoring.</p>
     </div>
     <button class="btn btn-primary" onclick="navTo('seller-opportunities')">&#128269; Find Matching Govt Needs &rarr;</button>
   </div>
 
   <!-- MY SUBMITTED PITCHES -->
   <div class="card" id="seller-my-pitches-card" style="margin-bottom:20px;">
-    <div class="card-header" style="background:#0b2545;display:flex;justify-content:space-between;align-items:center;">
+    <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
       <span>&#128236; My Submitted Technical Pitches &amp; Review Status</span>
-      <span class="badge" id="seller-pitches-count-badge" style="background:#fff;color:#0b2545;">0 Pitches</span>
+      <span class="badge" id="seller-pitches-count-badge" style="background:#fff;color:#C2410C;font-weight:700;">0 Pitches</span>
     </div>
     <div class="card-body" id="seller-my-pitches-list" style="padding:14px;">
       Loading your proposals...
@@ -1311,11 +1781,40 @@ textarea.form-control{resize: vertical;min-height: 85px;}
 
 </div><!-- /main -->
 
-<!-- FOOTER -->
-<div class="gov-footer">
-  SETU &mdash; Govt Innovation Trial &amp; Fast-Track Procurement Portal &nbsp;|&nbsp; Government of India &nbsp;|&nbsp; GFR 2017 Rule 173 Innovation Framework &nbsp;|&nbsp;
-  <a href="/api/v1/docs" target="_blank" style="color:#aac4ff;">OpenAPI Specs</a>
-</div>
+<!-- FOOTER WITH INDIAN HERITAGE MONUMENTS SKYLINE -->
+<footer class="gov-footer-wrapper">
+  <div class="footer-skyline-band">
+    <div class="footer-skyline-inner">
+      <img src="/static/monuments_saffron_green_hd.png" alt="Indian Heritage Monuments Skyline" class="footer-skyline-img">
+    </div>
+  </div>
+  <div style="position:relative;height:5px;background:linear-gradient(90deg,#D95A1E 0%,#C2410C 33.3%,#ffffff 33.3% 66.6%,#16A34A 66.6%,#138808 100%);">
+    <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;background:#fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.25);border:1px solid #CBD5E1;display:flex;align-items:center;justify-content:center;z-index:2;">
+      <img src="/static/ashoka_chakra.svg" alt="Ashoka Chakra" style="width:16px;height:16px;display:block;">
+    </div>
+  </div>
+  <div class="gov-footer">
+    <div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; text-align: left;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:38px;height:38px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:3px;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          <img src="/static/setu_wheel_logo.png" alt="SETU Wheel Logo" style="width:30px;height:30px;object-fit:contain;">
+        </div>
+        <div>
+          <div style="font-weight: 700; font-size: 13.5px; color: #FFFFFF; margin-bottom: 3px;">
+            SETU &mdash; Govt Innovation Trial &amp; Fast-Track Procurement Portal
+          </div>
+          <div style="font-size: 11px; color: #FED7AA;">
+            Public Procurement Innovation Cell &bull; General Financial Rules (GFR) 2017 Rule 173 Framework &bull; Government of India
+          </div>
+        </div>
+      </div>
+      <div style="text-align: right; font-size: 11.5px; color: #FED7AA;">
+        <span>Digital India &bull; Make in India &bull; GeM Verified &nbsp;|&nbsp; </span>
+        <a href="/api/v1/docs" target="_blank" style="color: #FB923C; font-weight: 700; text-decoration: underline;">OpenAPI Specs &rarr;</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script>
 // ============================================================
@@ -1391,6 +1890,10 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const pg = document.getElementById(id);
   if (pg) pg.classList.add('active');
+  const footerSkyline = document.querySelector('.footer-skyline-band');
+  if (footerSkyline) {
+    footerSkyline.style.display = (id === 'page-landing' || id === 'page-login') ? 'none' : 'flex';
+  }
   window.scrollTo(0,0);
 }
 
@@ -1450,17 +1953,241 @@ function updateHeaderAndNav() {
 // AUTHENTICATION
 // ============================================================
 let _loginRole = 'buyer';
-function showLoginPage(role) {
-  _loginRole = role || 'buyer';
-  const titles = {buyer:'Govt Officer / Buyer Login', seller:'Supplier / Seller Login', admin:'Administrator Login'};
-  document.getElementById('login-title').textContent = titles[role] || 'Login';
-  document.getElementById('login-email').value = '';
-  document.getElementById('login-password').value = '';
-  document.getElementById('login-error').innerHTML = '';
+let _registerRole = 'buyer';
+let _authMode = 'login';
+
+function showLoginPage(role, mode) {
+  _authMode = mode || 'login';
+  const targetRole = role || 'buyer';
+  if (_authMode === 'register') {
+    _registerRole = targetRole === 'seller' ? 'seller' : 'buyer';
+  } else {
+    _loginRole = targetRole;
+  }
+  setAuthMode(_authMode, targetRole);
   showPage('page-login');
 }
 
+function setAuthMode(mode, role) {
+  _authMode = mode || 'login';
+  const errEl = document.getElementById('login-error');
+  if (errEl) errEl.innerHTML = '';
+
+  const tabSignin = document.getElementById('tab-btn-signin');
+  const tabRegBuyer = document.getElementById('tab-btn-reg-buyer');
+  const tabRegSeller = document.getElementById('tab-btn-reg-seller');
+  const formSignin = document.getElementById('form-signin');
+  const formRegister = document.getElementById('form-register');
+
+  [tabSignin, tabRegBuyer, tabRegSeller].forEach(b => {
+    if (b) {
+      b.classList.remove('active');
+      b.style.background = 'transparent';
+      b.style.color = '#64748B';
+      b.style.boxShadow = 'none';
+      b.style.fontWeight = '600';
+    }
+  });
+
+  if (_authMode === 'login') {
+    if (tabSignin) {
+      tabSignin.classList.add('active');
+      tabSignin.style.background = '#ffffff';
+      tabSignin.style.color = '#0F172A';
+      tabSignin.style.boxShadow = '0 1px 4px rgba(0,0,0,0.08)';
+      tabSignin.style.fontWeight = '700';
+    }
+    if (formSignin) formSignin.style.display = 'flex';
+    if (formRegister) formRegister.style.display = 'none';
+    setLoginRole(role || _loginRole || 'buyer');
+  } else {
+    const regRole = role || _registerRole || 'buyer';
+    const activeTab = regRole === 'seller' ? tabRegSeller : tabRegBuyer;
+    if (activeTab) {
+      activeTab.classList.add('active');
+      activeTab.style.background = '#ffffff';
+      activeTab.style.color = '#0F172A';
+      activeTab.style.boxShadow = '0 1px 4px rgba(0,0,0,0.08)';
+      activeTab.style.fontWeight = '700';
+    }
+    if (formSignin) formSignin.style.display = 'none';
+    if (formRegister) formRegister.style.display = 'flex';
+    setRegisterRole(regRole);
+  }
+}
+
+function setLoginRole(role) {
+  _loginRole = role === 'seller' ? 'seller' : 'buyer';
+  const pills = {
+    buyer: document.getElementById('role-pill-buyer'),
+    seller: document.getElementById('role-pill-seller')
+  };
+  Object.keys(pills).forEach(k => {
+    const p = pills[k];
+    if (p) {
+      p.style.border = '1.5px solid #E2E8F0';
+      p.style.background = '#fff';
+      p.style.color = '#64748B';
+      p.style.fontWeight = '600';
+    }
+  });
+
+  const activePill = pills[_loginRole];
+  const badgeEl = document.getElementById('auth-badge');
+  const titleEl = document.getElementById('login-title');
+  const subtitleEl = document.getElementById('login-subtitle');
+  const emailLabel = document.getElementById('login-email-label');
+  const emailInput = document.getElementById('login-email');
+  const submitBtn = document.getElementById('btn-login-submit');
+
+  if (_loginRole === 'buyer') {
+    if (activePill) {
+      activePill.style.border = '1.5px solid #2563EB';
+      activePill.style.background = '#EFF6FF';
+      activePill.style.color = '#1D4ED8';
+      activePill.style.fontWeight = '700';
+    }
+    if (badgeEl) {
+      badgeEl.textContent = 'Govt Officer Portal';
+      badgeEl.style.background = '#EFF6FF';
+      badgeEl.style.color = '#1D4ED8';
+      badgeEl.style.border = '1px solid #BFDBFE';
+    }
+    if (titleEl) titleEl.textContent = 'Govt Officer / Buyer Login';
+    if (subtitleEl) subtitleEl.textContent = 'Sign in with your official government credentials';
+    if (emailLabel) emailLabel.textContent = 'Official Email (.gov.in / nic.in) or Username';
+    if (emailInput) emailInput.placeholder = 'e.g. buyer or buyer@pune.gov.in';
+    if (submitBtn) {
+      submitBtn.className = 'button-submit btn-buyer';
+      submitBtn.textContent = 'Sign In as Officer \u2192';
+    }
+  } else {
+    if (activePill) {
+      activePill.style.border = '1.5px solid #EA580C';
+      activePill.style.background = '#FFF7ED';
+      activePill.style.color = '#C2410C';
+      activePill.style.fontWeight = '700';
+    }
+    if (badgeEl) {
+      badgeEl.textContent = 'DPIIT / GeM Innovator Portal';
+      badgeEl.style.background = '#FFF7ED';
+      badgeEl.style.color = '#C2410C';
+      badgeEl.style.border = '1px solid #FED7AA';
+    }
+    if (titleEl) titleEl.textContent = 'Supplier / Seller Login';
+    if (subtitleEl) subtitleEl.textContent = 'Sign in with your startup or verified supplier account';
+    if (emailLabel) emailLabel.textContent = 'Registered Business Email or Username';
+    if (emailInput) emailInput.placeholder = 'e.g. seller or seller@rajputana.in';
+    if (submitBtn) {
+      submitBtn.className = 'button-submit';
+      submitBtn.textContent = 'Sign In as Startup \u2192';
+    }
+  }
+}
+
+function setRegisterRole(role) {
+  _registerRole = role || 'buyer';
+  const btnBuyer = document.getElementById('reg-role-buyer');
+  const btnSeller = document.getElementById('reg-role-seller');
+  const badgeEl = document.getElementById('auth-badge');
+  const titleEl = document.getElementById('login-title');
+  const subtitleEl = document.getElementById('login-subtitle');
+  const nameLabel = document.getElementById('reg-name-label');
+  const orgLabel = document.getElementById('reg-org-label');
+  const emailLabel = document.getElementById('reg-email-label');
+  const extraFields = document.getElementById('seller-extra-fields');
+  const submitBtn = document.getElementById('btn-register-submit');
+
+  const tabBuyer = document.getElementById('tab-btn-reg-buyer');
+  const tabSeller = document.getElementById('tab-btn-reg-seller');
+
+  if (_registerRole === 'buyer') {
+    if (btnBuyer) {
+      btnBuyer.style.border = '1.5px solid #2563EB';
+      btnBuyer.style.background = '#EFF6FF';
+      btnBuyer.style.color = '#1D4ED8';
+      btnBuyer.style.fontWeight = '700';
+    }
+    if (btnSeller) {
+      btnSeller.style.border = '1.5px solid #E2E8F0';
+      btnSeller.style.background = '#fff';
+      btnSeller.style.color = '#64748B';
+      btnSeller.style.fontWeight = '600';
+    }
+    if (tabBuyer) {
+      tabBuyer.style.background = '#ffffff';
+      tabBuyer.style.color = '#0F172A';
+      tabBuyer.style.fontWeight = '700';
+      tabBuyer.style.boxShadow = '0 1px 4px rgba(0,0,0,0.08)';
+    }
+    if (tabSeller) {
+      tabSeller.style.background = 'transparent';
+      tabSeller.style.color = '#64748B';
+      tabSeller.style.fontWeight = '600';
+      tabSeller.style.boxShadow = 'none';
+    }
+    if (badgeEl) {
+      badgeEl.textContent = 'Govt Buyer Registration';
+      badgeEl.style.background = '#EFF6FF';
+      badgeEl.style.color = '#1D4ED8';
+      badgeEl.style.border = '1px solid #BFDBFE';
+    }
+    if (titleEl) titleEl.textContent = 'Register as Govt Buyer / Officer';
+    if (subtitleEl) subtitleEl.textContent = 'For Municipalities, Smart Cities, Ministries & Urban Local Bodies';
+    if (nameLabel) nameLabel.textContent = 'Full Name / Nodal Officer *';
+    if (orgLabel) orgLabel.textContent = 'Organization / Department / ULB *';
+    if (emailLabel) emailLabel.textContent = 'Official Email Address *';
+    if (extraFields) extraFields.style.display = 'none';
+    if (submitBtn) {
+      submitBtn.className = 'button-submit btn-buyer';
+      submitBtn.textContent = 'Complete Registration as Buyer \u2192';
+    }
+  } else {
+    if (btnSeller) {
+      btnSeller.style.border = '1.5px solid #EA580C';
+      btnSeller.style.background = '#FFF7ED';
+      btnSeller.style.color = '#C2410C';
+      btnSeller.style.fontWeight = '700';
+    }
+    if (btnBuyer) {
+      btnBuyer.style.border = '1.5px solid #E2E8F0';
+      btnBuyer.style.background = '#fff';
+      btnBuyer.style.color = '#64748B';
+      btnBuyer.style.fontWeight = '600';
+    }
+    if (tabSeller) {
+      tabSeller.style.background = '#ffffff';
+      tabSeller.style.color = '#0F172A';
+      tabSeller.style.fontWeight = '700';
+      tabSeller.style.boxShadow = '0 1px 4px rgba(0,0,0,0.08)';
+    }
+    if (tabBuyer) {
+      tabBuyer.style.background = 'transparent';
+      tabBuyer.style.color = '#64748B';
+      tabBuyer.style.fontWeight = '600';
+      tabBuyer.style.boxShadow = 'none';
+    }
+    if (badgeEl) {
+      badgeEl.textContent = 'DPIIT / GeM Seller Registration';
+      badgeEl.style.background = '#FFF7ED';
+      badgeEl.style.color = '#C2410C';
+      badgeEl.style.border = '1px solid #FED7AA';
+    }
+    if (titleEl) titleEl.textContent = 'Register as Supplier / Seller';
+    if (subtitleEl) subtitleEl.textContent = 'For DPIIT-recognized DeepTech Startups & GeM Verified Sellers';
+    if (nameLabel) nameLabel.textContent = 'Founder / Representative Name *';
+    if (orgLabel) orgLabel.textContent = 'Startup / Enterprise Name *';
+    if (emailLabel) emailLabel.textContent = 'Business Email Address *';
+    if (extraFields) extraFields.style.display = 'flex';
+    if (submitBtn) {
+      submitBtn.className = 'button-submit';
+      submitBtn.textContent = 'Complete Registration as Supplier \u2192';
+    }
+  }
+}
+
 function quickLogin(email, pass) {
+  setAuthMode('login');
   const emailInput = document.getElementById('login-email');
   const passInput = document.getElementById('login-password');
   if (emailInput) emailInput.value = email;
@@ -1471,15 +2198,15 @@ function quickLogin(email, pass) {
 async function doLogin() {
   const email = document.getElementById('login-email').value.trim();
   const pass = document.getElementById('login-password').value;
+  const errEl = document.getElementById('login-error');
   if (!email || !pass) {
-    document.getElementById('login-error').innerHTML = '<div class="alert alert-error">Please enter username/email and password.</div>';
+    if (errEl) errEl.innerHTML = '<div class="alert alert-error">Please enter username/email and password.</div>';
     return;
   }
   try {
     const data = await api('POST', '/auth/login', {email, password:pass});
     S.token = data.access_token;
     S.user = {id:data.user_id, email:data.email, full_name:data.full_name, role:data.role, org_name:data.org_name};
-    // Isolated per-tab session storage prevents session collision between Buyer and Seller tabs
     sessionStorage.setItem('setu_token', S.token);
     sessionStorage.setItem('setu_user', JSON.stringify(S.user));
     localStorage.setItem('setu_token', S.token);
@@ -1488,7 +2215,61 @@ async function doLogin() {
     toast(`Authenticated as ${data.full_name}!`);
     navTo('home');
   } catch(e) {
-    document.getElementById('login-error').innerHTML = `<div class="alert alert-error">${e.message}</div>`;
+    if (errEl) errEl.innerHTML = `<div class="alert alert-error">${e.message}</div>`;
+  }
+}
+
+async function doRegister() {
+  const errEl = document.getElementById('login-error');
+  if (errEl) errEl.innerHTML = '';
+
+  const full_name = (document.getElementById('reg-name').value || '').trim();
+  const org_name = (document.getElementById('reg-org').value || '').trim();
+  const email = (document.getElementById('reg-email').value || '').trim();
+  const password = document.getElementById('reg-password').value || '';
+  const confirmPassword = document.getElementById('reg-confirm-password').value || '';
+  const state = document.getElementById('reg-state').value || 'Maharashtra';
+  const phone = (document.getElementById('reg-phone').value || '').trim();
+  const domain = document.getElementById('reg-domain') ? (document.getElementById('reg-domain').value || '').trim() : '';
+  const dpiit_number = document.getElementById('reg-dpiit') ? (document.getElementById('reg-dpiit').value || '').trim() : '';
+
+  if (!full_name || !org_name || !email || !password) {
+    if (errEl) errEl.innerHTML = '<div class="alert alert-error">Please fill in all required fields marked with *.</div>';
+    return;
+  }
+  if (password.length < 6) {
+    if (errEl) errEl.innerHTML = '<div class="alert alert-error">Password must be at least 6 characters long.</div>';
+    return;
+  }
+  if (password !== confirmPassword) {
+    if (errEl) errEl.innerHTML = '<div class="alert alert-error">Passwords do not match. Please re-enter.</div>';
+    return;
+  }
+
+  try {
+    const payload = {
+      email,
+      password,
+      full_name,
+      role: _registerRole,
+      org_name,
+      state,
+      phone,
+      domain,
+      dpiit_number
+    };
+    const data = await api('POST', '/auth/register', payload);
+    S.token = data.access_token;
+    S.user = {id:data.user_id, email:data.email, full_name:data.full_name, role:data.role, org_name:data.org_name};
+    sessionStorage.setItem('setu_token', S.token);
+    sessionStorage.setItem('setu_user', JSON.stringify(S.user));
+    localStorage.setItem('setu_token', S.token);
+    localStorage.setItem('setu_user', JSON.stringify(S.user));
+    updateHeaderAndNav();
+    toast(`Registration successful! Welcome to SETU, ${data.full_name}!`);
+    navTo('home');
+  } catch(e) {
+    if (errEl) errEl.innerHTML = `<div class="alert alert-error">${e.message}</div>`;
   }
 }
 
@@ -1973,7 +2754,7 @@ function renderSellerOpportunities(opps) {
     const scoreColor = score >= 80 ? '#15803d' : score >= 60 ? '#1d4ed8' : '#ea580c';
     return `
       <div class="card" style="margin-bottom:16px;border:1px solid #cbd5e1;">
-        <div class="card-header" style="background:#0b2545;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <div class="card-header" style="background:#0F172A;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
           <div>
             <span style="font-size:14px;font-weight:700;">${o.title}</span>
             <div style="font-size:11.5px;color:#cbd5e1;margin-top:2px;">

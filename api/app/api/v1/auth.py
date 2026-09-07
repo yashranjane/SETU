@@ -4,6 +4,7 @@ from sqlmodel import Session, select
 
 from app.core.auth import create_token, get_current_user, hash_password, verify_password
 from app.db import get_session
+from app.models.startup import Startup
 from app.models.user import User
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
@@ -17,6 +18,9 @@ class RegisterRequest(BaseModel):
     org_name: str = ""
     state: str = ""
     phone: str = ""
+    domain: str = ""
+    solution_title: str = ""
+    dpiit_number: str = ""
 
 
 class LoginRequest(BaseModel):
@@ -36,23 +40,51 @@ class TokenResponse(BaseModel):
 
 @router.post("/register", response_model=TokenResponse, status_code=201)
 def register(payload: RegisterRequest, session: Session = Depends(get_session)):
-    if payload.role not in ("buyer", "seller"):
+    req_role = (payload.role or "").lower().strip()
+    if req_role not in ("buyer", "seller"):
         raise HTTPException(status_code=400, detail="Role must be 'buyer' or 'seller'")
-    existing = session.exec(select(User).where(User.email == payload.email)).first()
+    
+    clean_email = payload.email.lower().strip()
+    existing = session.exec(select(User).where(User.email == clean_email)).first()
     if existing:
-        raise HTTPException(status_code=409, detail="Email already registered")
+        raise HTTPException(status_code=409, detail="An account with this email is already registered. Please sign in.")
+    
+    default_org = "Government Department" if req_role == "buyer" else "Innovation Startup"
     user = User(
-        email=payload.email.lower().strip(),
-        full_name=payload.full_name.strip(),
+        email=clean_email,
+        full_name=payload.full_name.strip() or ("Govt Nodal Officer" if req_role == "buyer" else "Startup Founder"),
         password_hash=hash_password(payload.password),
-        role=payload.role,
-        org_name=payload.org_name.strip(),
-        state=payload.state.strip(),
+        role=req_role,
+        org_name=payload.org_name.strip() or default_org,
+        state=payload.state.strip() or "Maharashtra",
         phone=payload.phone.strip(),
     )
     session.add(user)
     session.commit()
     session.refresh(user)
+
+    if req_role == "seller":
+        st_domain = payload.domain.strip() or "Urban Infrastructure & DeepTech"
+        st_title = payload.solution_title.strip() or f"{user.org_name} Sandbox Solution"
+        st_dpiit = payload.dpiit_number.strip() or f"DIPP-{10000 + user.id}"
+        startup = Startup(
+            seller_id=user.id,
+            name=user.org_name or user.full_name or "Innovative Startup",
+            domain=st_domain,
+            solution_title=st_title,
+            description=f"DPIIT-recognized innovation provider registered under GFR 173 Sandbox by {user.full_name}.",
+            trl_level=7,
+            dpiit_certified=True,
+            dpiit_number=st_dpiit,
+            gem_seller_id=f"GEM-{10000 + user.id}",
+            is_gem_verified=True,
+            gem_rating=4.9,
+            financial_capacity_score=0.88,
+            state=user.state or "Maharashtra",
+        )
+        session.add(startup)
+        session.commit()
+
     token = create_token({"sub": str(user.id), "role": user.role})
     return TokenResponse(
         access_token=token, user_id=user.id, email=user.email,
