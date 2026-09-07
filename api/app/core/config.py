@@ -10,10 +10,19 @@ except ImportError:
     pass
 
 
+def _get_default_db_url() -> str:
+    env_url = os.getenv("DB_URL")
+    if env_url:
+        return env_url
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    db_file = os.path.join(base_dir, "setu.db").replace("\\", "/")
+    return f"sqlite:///{db_file}"
+
+
 class Settings(BaseModel):
     PROJECT_NAME: str = "SETU - Smart Government Procurement Portal"
     API_V1_STR: str = "/api/v1"
-    DB_URL: str = Field(default_factory=lambda: os.getenv("DB_URL", "sqlite:///./setu.db"))
+    DB_URL: str = Field(default_factory=_get_default_db_url)
     JWT_SECRET: str = Field(default_factory=lambda: os.getenv("JWT_SECRET", "setu-secret"))
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24

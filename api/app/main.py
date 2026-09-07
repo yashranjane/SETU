@@ -1,5 +1,11 @@
 import os
+import sys
 from contextlib import asynccontextmanager
+
+_api_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _api_dir not in sys.path:
+    sys.path.insert(0, _api_dir)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
