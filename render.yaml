@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: setu-portal
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: RESET_DB
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_URL
+        value: sqlite:///./setu.db

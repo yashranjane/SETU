@@ -5,6 +5,25 @@
 
 ---
 
+## 🚀 Deploy to Render
+
+Deploy the complete SETU portal live on Render with 1-click:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/yashranjane/SETU)
+
+### Quick Manual Deployment on Render
+1. Go to [Render Dashboard](https://dashboard.render.com/) &rarr; Click **New +** &rarr; **Web Service**.
+2. Connect your GitHub repo (`yashranjane/SETU`).
+3. Set **Runtime**: `Docker`
+   - **Dockerfile Path**: `./Dockerfile`
+   - **Docker Context**: `.`
+   - **Health Check Path**: `/health`
+4. Set Environment Variable:
+   - `RESET_DB`: `true` (initializes clean baseline with only the Stormwater challenge)
+5. Click **Create Web Service** &mdash; your portal will be live in minutes!
+
+---
+
 ## Monorepo Architecture
 
 ```

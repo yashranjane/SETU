@@ -14,16 +14,25 @@ from app.models.milestone import Milestone
 from app.core.auth import hash_password
 from app.services.audit_service import append_audit_block
 
-# Ensure tables exist without dropping existing data
+reset_requested = (
+    "--reset" in sys.argv
+    or os.getenv("RESET_DB", "").lower() in ("true", "1", "yes")
+)
+
+if reset_requested:
+    print("  [RESET] Dropping all existing tables to restore clean baseline...")
+    SQLModel.metadata.drop_all(engine)
+
+# Ensure tables exist
 SQLModel.metadata.create_all(engine)
 
 with Session(engine) as session:
     existing_user = session.exec(select(User)).first()
-    if existing_user:
+    if existing_user and not reset_requested:
         print("  Database already contains data. Preserving all records.")
         sys.exit(0)
 
-    print("  Seeding initial demo data for first-time launch...")
+    print("  Seeding initial clean data (Stormwater challenge baseline)...")
 
 with Session(engine) as session:
     # 1. Admin
